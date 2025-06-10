@@ -1,4 +1,4 @@
-# MyJS Learning Repository �
+# MyJS Learning Repository 🚀
 
 A curated collection of JavaScript notes, code examples, and projects as I learn JavaScript from scratch. This repo documents my journey in mastering frontend and backend development with JS.
 
