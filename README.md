@@ -1,6 +1,8 @@
-# MyJS Learning Repository �
+# MyJS Learning Repository 🚀
 
 A curated collection of JavaScript notes, code examples, and projects as I learn JavaScript from scratch. This repo documents my journey in mastering frontend and backend development with JS.
+
+<p align="center"><a href="https://www.javascript.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" width="400" alt="JS Logo"></a></p>
 
 ---
 
