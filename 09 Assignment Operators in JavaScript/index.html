@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09 - Assignment Operators</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Assignment Operators</h1>
+    <p>Used to <strong>assign values</strong> to variables. Compound operators combine arithmetic with assignment.</p>
+
+    <h2>Different Types of Assignment Operators</h2>
+    <table>
+        <tr><th>Operator</th><th>Example</th><th>Same As</th></tr>
+        <tr><td><code>=</code></td><td><code>x = y</code></td><td><code>x = y</code></td></tr>
+        <tr><td><code>+=</code></td><td><code>x += y</code></td><td><code>x = x + y</code></td></tr>
+        <tr><td><code>-=</code></td><td><code>x -= y</code></td><td><code>x = x - y</code></td></tr>
+        <tr><td><code>*=</code></td><td><code>x *= y</code></td><td><code>x = x * y</code></td></tr>
+        <tr><td><code>/=</code></td><td><code>x /= y</code></td><td><code>x = x / y</code></td></tr>
+        <tr><td><code>%=</code></td><td><code>x %= y</code></td><td><code>x = x % y</code></td></tr>
+        <tr><td><code>**=</code></td><td><code>x **= y</code></td><td><code>x = x ** y</code></td></tr>
+    </table>
+
+    <h2>Basic Example</h2>
+<pre>var a = 10;
+var b = 20;
+a += b;
+
+document.write(a);   // 30</pre>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
