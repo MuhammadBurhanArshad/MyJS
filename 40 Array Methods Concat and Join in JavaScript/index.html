@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>40 - Array Methods concat() & join()</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Array Methods concat() &amp; join()</h1>
+
+    <h2>Target Methods</h2>
+    <ul>
+        <li><code>concat()</code> — merge arrays</li>
+        <li><code>join()</code> — convert array to string</li>
+    </ul>
+
+    <h2>1. concat() Method</h2>
+    <p>Merges two or more arrays (or values) into a <strong>new array</strong>.</p>
+
+    <h3>Syntax</h3>
+<pre>var newArray = arrayName.concat(otherArray);
+var newArray = arrayName.concat(value1, value2);
+var newArray = arrayName.concat(array1, array2);</pre>
+
+    <h3>Example — Values</h3>
+<pre>var a = ["Sanjay", "Aman", "Burhan"];
+var c = a.concat("Karan", "Rehman");
+// c → ["Sanjay", "Aman", "Burhan", "Karan", "Rehman"]</pre>
+
+    <h3>Example — Arrays</h3>
+<pre>var a = ["Sanjay", "Aman", "Burhan"];
+var b = ["Karan", "Rehman"];
+var c = a.concat(b);
+// c → ["Sanjay", "Aman", "Burhan", "Karan", "Rehman"]</pre>
+
+    <h3>Example — Multiple Arrays</h3>
+<pre>var a = ["Sanjay"];
+var b = ["Aman"];
+var c = ["Burhan"];
+
+var d = a.concat(b, c);
+// d → ["Sanjay", "Aman", "Burhan"]</pre>
+
+    <div class="note">
+        ⭐ We can also put <strong>variable names</strong> in <code>concat()</code>.<br>
+        ⭐ We can merge <strong>multiple variables</strong>.
+    </div>
+
+    <h2>2. join() Method</h2>
+    <p>Converts an array into a <strong>string</strong>.</p>
+
+    <h3>Syntax</h3>
+<pre>var str = arrayName.join(separator);</pre>
+
+    <h3>Example — Custom Separator</h3>
+<pre>var a = ["Sanjay", "Aman", "Burhan", "Rehman"];
+var b = a.join(" - ");
+// b → "Sanjay - Aman - Burhan - Rehman"</pre>
+
+    <h3>Example — Default Separator</h3>
+<pre>["HTML", "CSS", "JS"].join();
+// "HTML,CSS,JS"</pre>
+
+    <h3>Example — No Separator</h3>
+<pre>["H", "e", "l", "l", "o"].join("");
+// "Hello"</pre>
+
+    <div class="note">
+        ⭐ <strong>join() makes a String</strong> from the array.
+    </div>
+
+    <h2>Comparison</h2>
+    <table>
+        <tr><th>Feature</th><th>concat()</th><th>join()</th></tr>
+        <tr><td>Purpose</td><td>Merge arrays</td><td>Convert to string</td></tr>
+        <tr><td>Returns</td><td>New array</td><td>New string</td></tr>
+        <tr><td>Modifies original</td><td>❌ No</td><td>❌ No</td></tr>
+        <tr><td>Separator</td><td>N/A</td><td>Optional</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
