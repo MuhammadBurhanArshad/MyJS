@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>36 - Modify and Remove Array Element</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Modify and Remove Array Element</h1>
+
+    <h2>1. Modify Array Element</h2>
+    <p>Assign a new value to an index:</p>
+<pre>var a = ["Burhan", 17, "BBA"];
+a[1] = 18;</pre>
+
+    <table>
+        <tr><th>Index</th><th>Before</th><th>After</th></tr>
+        <tr><td>0</td><td>"Burhan"</td><td>"Burhan"</td></tr>
+        <tr><td>1</td><td>17</td><td><strong>18</strong></td></tr>
+        <tr><td>2</td><td>"BBA"</td><td>"BBA"</td></tr>
+    </table>
+
+    <h2>2. Remove Array Element</h2>
+    <p>Use the <code>delete</code> keyword:</p>
+<pre>var a = ["Burhan", 18, "BCA"];
+delete a[1];</pre>
+
+    <table>
+        <tr><th>Index</th><th>Before</th><th>After</th></tr>
+        <tr><td>0</td><td>"Burhan"</td><td>"Burhan"</td></tr>
+        <tr><td>1</td><td>18</td><td><strong>undefined</strong></td></tr>
+        <tr><td>2</td><td>"BCA"</td><td>"BCA"</td></tr>
+    </table>
+
+    <div class="note">
+        ⚠️ <strong>Important:</strong> <code>delete</code> does <strong>NOT shift</strong> the remaining elements. It leaves an <strong>empty slot</strong> (<code>undefined</code>) at that index.
+    </div>
+
+    <h2>delete vs splice</h2>
+    <table>
+        <tr><th>Method</th><th>Effect</th><th>Length</th></tr>
+        <tr><td><code>delete a[1]</code></td><td>value → undefined</td><td>same</td></tr>
+        <tr><td><code>a.splice(1, 1)</code></td><td>removed, shift</td><td>−1</td></tr>
+    </table>
+
+    <h2>Complete Example</h2>
+<pre>var a = ["Burhan", 17, "BBA"];
+
+a[1] = 18;        // modify
+delete a[2];      // remove
+
+// a → ["Burhan", 18, undefined]</pre>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
