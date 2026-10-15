@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24 - Global and Local Variables</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Global and Local Variables</h1>
+    <p>Variables are categorized by <strong>where they are declared</strong>.</p>
+
+    <h2>Structure</h2>
+<pre>var a = 10;                          // ← Global Variable
+
+function functionName() {
+    var b = 25;                      // ← Local Variable
+}</pre>
+
+    <div class="note">
+        ⭐ <strong>Global variables can work inside and outside of the function.</strong>
+    </div>
+
+    <h2>Comparison Table</h2>
+    <table>
+        <tr><th>Variable Type</th><th>Where Declared</th><th>Where Accessible</th></tr>
+        <tr><td>Global</td><td>Outside a function</td><td>Inside <strong>and</strong> outside functions</td></tr>
+        <tr><td>Local</td><td>Inside a function</td><td><strong>Only</strong> inside that function</td></tr>
+    </table>
+
+    <h2>Example — Global Variable</h2>
+<pre>var a = 10;
+
+function show() {
+    document.write(a);   // ✅ Works — global can be used inside
+}
+
+show();                  // 10
+document.write(a);       // ✅ Works — global can be used outside</pre>
+
+    <h2>Example — Local Variable</h2>
+<pre>function show() {
+    var b = 25;
+    document.write(b);   // ✅ Works — inside the function
+}
+
+show();                  // 25
+document.write(b);       // ❌ Error — b is not defined outside</pre>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
