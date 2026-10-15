@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21 - Functions</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Functions</h1>
+    <p>A <strong>function</strong> is a reusable block of code that performs a specific task.</p>
+
+    <h2>Without Functions vs With Functions</h2>
+
+    <h3>❌ Without Functions</h3>
+<pre>document.write("Burhan");
+- - -
+document.write("Burhan");
+- - -
+document.write("Burhan");</pre>
+
+    <h3>✅ With Functions</h3>
+<pre>function myName() {
+    document.write("Burhan");
+}
+
+myName();
+- - -
+myName();
+- - -
+myName();</pre>
+
+    <div class="note">
+        A function is used for <strong>removing unnecessary code</strong> and <strong>reducing code/file size</strong>.
+    </div>
+
+    <h2>Function Syntax</h2>
+
+    <h3>Defining a Function</h3>
+<pre>function functionName() {
+    statement
+}</pre>
+
+    <h3>Calling a Function</h3>
+<pre>functionName();</pre>
+
+    <h2>Example</h2>
+<pre>function greet() {
+    document.write("Burhan");
+}
+
+greet();   // Burhan
+greet();   // Burhan
+greet();   // Burhan</pre>
+
+    <h2>Why Use Functions?</h2>
+    <ul>
+        <li>Reusability — write once, use many times</li>
+        <li>Reduces code size — no repetition</li>
+        <li>Easier maintenance</li>
+        <li>Better readability</li>
+        <li>Modularity</li>
+    </ul>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
