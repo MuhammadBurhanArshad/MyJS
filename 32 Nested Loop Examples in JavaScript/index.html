@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32 - Nested Loop Examples</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .pattern { background: #f0f0f0; padding: 8px 12px; border-radius: 4px; font-family: monospace; display: inline-block; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Nested Loop Examples</h1>
+    <p>Four classic patterns built with nested loops.</p>
+
+    <h2>Example 1 — Number Triangle (1 to n)</h2>
+    <div class="pattern">1<br>1 2<br>1 2 3<br>1 2 3 4<br>1 2 3 4 5</div>
+<pre>for (var a = 1; a &lt;= 5; a++) {
+    for (var b = 1; b &lt;= a; b++) {
+        document.write(b);
+    }
+    document.write("&lt;br&gt;");
+}</pre>
+
+    <h2>Example 2 — Repeated Number Triangle</h2>
+    <div class="pattern">1<br>2 2<br>3 3 3<br>4 4 4 4<br>5 5 5 5 5</div>
+<pre>for (var a = 1; a &lt;= 5; a++) {
+    for (var b = 1; b &lt;= a; b++) {
+        document.write(a + " ");
+    }
+    document.write("&lt;br&gt;");
+}</pre>
+
+    <h2>Example 3 — Reverse Repeated Triangle</h2>
+    <div class="pattern">5 5 5 5 5<br>4 4 4 4<br>3 3 3<br>2 2<br>1</div>
+<pre>for (var a = 5; a &gt;= 1; a--) {
+    for (var b = 1; b &lt;= a; b++) {
+        document.write(a);
+    }
+    document.write("&lt;br&gt;");
+}</pre>
+
+    <h2>Example 4 — Reverse Number Pyramid</h2>
+    <div class="pattern">5 4 3 2 1<br>4 3 2 1<br>3 2 1<br>2 1<br>1</div>
+<pre>for (var a = 5; a &gt;= 1; a--) {
+    for (var b = a; b &gt;= 1; b--) {
+        document.write(b);
+    }
+    document.write("&lt;br&gt;");
+}</pre>
+
+    <h2>Summary</h2>
+    <table>
+        <tr><th>Example</th><th>Outer</th><th>Inner</th><th>Printed</th></tr>
+        <tr><td>1</td><td>1 → 5</td><td>1 → a</td><td><code>b</code></td></tr>
+        <tr><td>2</td><td>1 → 5</td><td>1 → a</td><td><code>a</code></td></tr>
+        <tr><td>3</td><td>5 → 1</td><td>1 → a</td><td><code>a</code></td></tr>
+        <tr><td>4</td><td>5 → 1</td><td>a → 1</td><td><code>b</code></td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
