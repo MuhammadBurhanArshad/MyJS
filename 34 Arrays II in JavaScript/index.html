@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>34 - Arrays II in JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Arrays II</h1>
+    <p>Another way to create arrays — using the <code>new Array()</code> constructor.</p>
+
+    <h2>Another Way to Create Arrays</h2>
+
+    <h3>1. Old Way (Array Literal)</h3>
+<pre>var a = [10, 20, 30];      // → old way</pre>
+
+    <h3>2. Another Way (<code>new Array()</code>)</h3>
+<pre>var a = new Array();       // → another way</pre>
+
+    <div class="note">
+        We use <code>new Array()</code> for making an array when we <strong>don't have values to store in it</strong>.
+    </div>
+
+    <h2>Specifying the Size</h2>
+<pre>var a = new Array(3);      // 3 empty slots</pre>
+
+    <h2>Comparison</h2>
+    <table>
+        <tr><th>Feature</th><th>Literal <code>[ ]</code></th><th><code>new Array()</code></th></tr>
+        <tr><td>Syntax</td><td><code>var a = [10, 20, 30];</code></td><td><code>var a = new Array();</code></td></tr>
+        <tr><td>When to use</td><td>Values ready</td><td>No values yet</td></tr>
+        <tr><td>Specify size</td><td>❌</td><td>✅</td></tr>
+        <tr><td>Preferred</td><td>✅</td><td>⚠️</td></tr>
+    </table>
+
+    <h2>Important Note</h2>
+<pre>new Array(3)            // length 3, empty array
+new Array(10, 20, 30)   // [10, 20, 30]</pre>
+
+    <h2>Which Way Should You Use?</h2>
+    <p>✅ <strong>Use the literal way <code>[ ]</code></strong> in modern JavaScript.</p>
+    <p>⚠️ Only use <code>new Array()</code> when you specifically need to create an empty array with a fixed length.</p>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
