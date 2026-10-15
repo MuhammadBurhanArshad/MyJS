@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22 - Function with Parameters</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Function with Parameters</h1>
+    <p>Parameters allow you to <strong>pass values</strong> into functions.</p>
+
+    <div class="note">
+        <strong>Parameter</strong> = variable in the function definition<br>
+        <strong>Argument</strong> = actual value passed at call time
+    </div>
+
+    <h2>Syntax</h2>
+<pre>function functionName(parameter1, parameter2) {
+    statement
+}
+
+functionName(argument1, argument2);</pre>
+
+    <h2>Example — sum(a, b)</h2>
+<pre>function sum(a, b) {
+    document.write(a + b);
+}
+
+sum(10, 20);   // 30
+sum(20, 30);   // 50</pre>
+
+    <h2>More Examples</h2>
+
+    <h3>Greet by Name</h3>
+<pre>function greet(name) {
+    document.write("Hello, " + name + "!");
+}
+
+greet("Burhan");   // Hello, Burhan!
+greet("Ali");      // Hello, Ali!</pre>
+
+    <h3>Multiply Two Numbers</h3>
+<pre>function multiply(x, y) {
+    document.write(x * y);
+}
+
+multiply(5, 4);    // 20
+multiply(10, 3);   // 30</pre>
+
+    <h2>Parameter vs Argument</h2>
+    <table>
+        <tr><th>Term</th><th>Meaning</th><th>Example</th></tr>
+        <tr><td>Parameter</td><td>Variable in function definition</td><td><code>a</code>, <code>b</code></td></tr>
+        <tr><td>Argument</td><td>Actual value passed at call time</td><td><code>10</code>, <code>20</code></td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
