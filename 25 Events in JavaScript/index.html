@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25 - JavaScript Events</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        button {
+            background: #3498db; color: white; border: none;
+            padding: 10px 18px; border-radius: 6px;
+            cursor: pointer; font-size: 14px; margin: 5px 5px 5px 0;
+        }
+        button:hover { background: #2980b9; }
+        #hoverBox {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #eee;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Events</h1>
+    <p>Events are <strong>user or browser actions</strong> — like clicks, key presses, or page load.</p>
+
+    <h2>Basic Events</h2>
+
+    <h3>Mouse Events</h3>
+    <ul>
+        <li>Click</li>
+        <li>Double Click</li>
+        <li>Right Click</li>
+        <li>Mouse Hover</li>
+        <li>Mouse Out</li>
+        <li>Mouse Down</li>
+        <li>Mouse Up</li>
+    </ul>
+
+    <h3>Keyboard Events</h3>
+    <ul>
+        <li>Key Press</li>
+        <li>Key Up</li>
+    </ul>
+
+    <h3>Window / Document Events</h3>
+    <ul>
+        <li>Load</li>
+        <li>Unload</li>
+        <li>Resize</li>
+        <li>Scroll</li>
+    </ul>
+
+    <h2>Event → Attribute Mapping</h2>
+    <table>
+        <tr><th>Event</th><th>Attribute</th></tr>
+        <tr><td>Click</td><td><code>onclick</code></td></tr>
+        <tr><td>Double Click</td><td><code>ondblclick</code></td></tr>
+        <tr><td>Right Click</td><td><code>oncontextmenu</code></td></tr>
+        <tr><td>Mouse Hover</td><td><code>onmouseenter</code></td></tr>
+        <tr><td>Mouse Out</td><td><code>onmouseout</code></td></tr>
+        <tr><td>Mouse Down</td><td><code>onmousedown</code></td></tr>
+        <tr><td>Mouse Up</td><td><code>onmouseup</code></td></tr>
+        <tr><td>Key Press</td><td><code>onkeypress</code></td></tr>
+        <tr><td>Key Up</td><td><code>onkeyup</code></td></tr>
+        <tr><td>Load</td><td><code>onload</code></td></tr>
+        <tr><td>Unload</td><td><code>onunload</code></td></tr>
+        <tr><td>Resize</td><td><code>onresize</code></td></tr>
+        <tr><td>Scroll</td><td><code>onscroll</code></td></tr>
+    </table>
+
+    <h2>Example</h2>
+<pre>&lt;script&gt;
+  function hello() {
+    alert("Hello Everyone");
+  }
+&lt;/script&gt;
+
+&lt;button onclick="hello()"&gt;Click me&lt;/button&gt;</pre>
+
+    <h2>Try It</h2>
+    <button onclick="alert('Hello Everyone')">Click me</button>
+    <button ondblclick="alert('Double clicked!')">Double Click me</button>
+    <span id="hoverBox">Hover over me</span>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+    <script>
+        document.getElementById("hoverBox").addEventListener("mouseenter", function () {
+            this.style.background = "#3498db";
+            this.style.color = "white";
+            console.log("Mouse Hover event fired");
+        });
+        document.getElementById("hoverBox").addEventListener("mouseout", function () {
+            this.style.background = "#eee";
+            this.style.color = "#222";
+            console.log("Mouse Out event fired");
+        });
+    </script>
+
+</body>
+</html>
