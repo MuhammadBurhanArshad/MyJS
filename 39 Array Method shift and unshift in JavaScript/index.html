@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>39 - Array Method shift() & unshift()</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Array Method shift() &amp; unshift()</h1>
+
+    <h2>Array Methods for Now</h2>
+    <ul>
+        <li><code>shift()</code> — deletes the first value</li>
+        <li><code>unshift()</code> — adds a value at the first position</li>
+    </ul>
+
+    <h2>1. shift() Method</h2>
+    <p>Deletes the <strong>first value</strong> from an array.</p>
+
+    <h3>Syntax</h3>
+<pre>arrayName.shift();</pre>
+
+    <h3>Example</h3>
+<pre>var a = ["Sanjay", "Aman", "Rehman", "Karan"];
+a.shift();
+// a → ["Aman", "Rehman", "Karan"]</pre>
+
+    <table>
+        <tr><th>Index</th><th>Before</th><th>After</th></tr>
+        <tr><td>0</td><td>"Sanjay"</td><td>"Aman"</td></tr>
+        <tr><td>1</td><td>"Aman"</td><td>"Rehman"</td></tr>
+        <tr><td>2</td><td>"Rehman"</td><td>"Karan"</td></tr>
+        <tr><td>3</td><td>"Karan"</td><td>—</td></tr>
+    </table>
+
+    <h2>2. unshift() Method</h2>
+    <p>Adds a value at the <strong>first position</strong> of an array.</p>
+
+    <h3>Syntax</h3>
+<pre>arrayName.unshift(value);</pre>
+
+    <h3>Example</h3>
+<pre>var a = ["Sanjay", "Aman", "Burhan", "Rehman"];
+a.unshift("Arshad");
+// a → ["Arshad", "Sanjay", "Aman", "Burhan", "Rehman"]</pre>
+
+    <table>
+        <tr><th>Index</th><th>Before</th><th>After</th></tr>
+        <tr><td>0</td><td>"Sanjay"</td><td><strong>"Arshad"</strong></td></tr>
+        <tr><td>1</td><td>"Aman"</td><td>"Sanjay"</td></tr>
+        <tr><td>2</td><td>"Burhan"</td><td>"Aman"</td></tr>
+        <tr><td>3</td><td>"Rehman"</td><td>"Burhan"</td></tr>
+        <tr><td>4</td><td>—</td><td>"Rehman"</td></tr>
+    </table>
+
+    <div class="note">
+        ⭐ <strong>shift() deletes the first value of an array.</strong><br>
+        ⭐ <strong>unshift() adds value at first of an array.</strong>
+    </div>
+
+    <h2>Comparison</h2>
+    <table>
+        <tr><th>Feature</th><th>shift()</th><th>unshift()</th></tr>
+        <tr><td>Action</td><td>Removes first</td><td>Adds at beginning</td></tr>
+        <tr><td>Length change</td><td>−1</td><td>+1</td></tr>
+        <tr><td>Returns</td><td>Removed element</td><td>New length</td></tr>
+    </table>
+
+    <h2>Beginning vs End</h2>
+    <table>
+        <tr><th>Operation</th><th>Beginning</th><th>End</th></tr>
+        <tr><td>Add</td><td><code>unshift()</code></td><td><code>push()</code></td></tr>
+        <tr><td>Remove</td><td><code>shift()</code></td><td><code>pop()</code></td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
