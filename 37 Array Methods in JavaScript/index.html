@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>37 - Array Methods</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Array Methods</h1>
+    <p>Built-in methods for sorting, adding, removing, searching, filtering, and iterating.</p>
+
+    <h2>List of Array Methods</h2>
+    <table>
+        <tr><th>Method</th><th>Description</th></tr>
+        <tr><td><code>sort()</code></td><td>Sorts the array</td></tr>
+        <tr><td><code>reverse()</code></td><td>Reverses the order</td></tr>
+        <tr><td><code>pop()</code></td><td>Removes the last element</td></tr>
+        <tr><td><code>push()</code></td><td>Adds an element to the end</td></tr>
+        <tr><td><code>shift()</code></td><td>Removes the first element</td></tr>
+        <tr><td><code>unshift()</code></td><td>Adds an element to the beginning</td></tr>
+        <tr><td><code>concat()</code></td><td>Merges two or more arrays</td></tr>
+        <tr><td><code>join()</code></td><td>Joins elements into a string</td></tr>
+        <tr><td><code>slice()</code></td><td>Returns a portion</td></tr>
+        <tr><td><code>splice()</code></td><td>Adds / removes at a position</td></tr>
+        <tr><td><code>isArray()</code></td><td>Checks if a value is an array</td></tr>
+        <tr><td><code>indexOf()</code></td><td>First index of a value</td></tr>
+        <tr><td><code>lastIndexOf()</code></td><td>Last index of a value</td></tr>
+        <tr><td><code>entries()</code></td><td>Iterator of key/value pairs</td></tr>
+        <tr><td><code>every()</code></td><td>Tests if ALL pass</td></tr>
+        <tr><td><code>filter()</code></td><td>Keeps matching elements</td></tr>
+        <tr><td><code>find()</code></td><td>First matching element</td></tr>
+        <tr><td><code>findIndex()</code></td><td>Index of first match</td></tr>
+        <tr><td><code>includes()</code></td><td>Checks if contains</td></tr>
+        <tr><td><code>some()</code></td><td>Tests if ANY pass</td></tr>
+        <tr><td><code>forEach()</code></td><td>Runs a function for each</td></tr>
+        <tr><td><code>toString()</code></td><td>Converts to string</td></tr>
+        <tr><td><code>valueOf()</code></td><td>Returns the array itself</td></tr>
+        <tr><td><code>fill()</code></td><td>Fills with a static value</td></tr>
+    </table>
+
+    <h2>sort() Example</h2>
+<pre>var a = ["Sanjay", "Aman", "Burhan", "Rehman"];
+a.sort();
+// ["Aman", "Burhan", "Rehman", "Sanjay"]</pre>
+
+    <h2>reverse() Example</h2>
+<pre>var a = ["Sanjay", "Aman", "Burhan", "Rehman"];
+a.reverse();
+// ["Rehman", "Burhan", "Aman", "Sanjay"]</pre>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
