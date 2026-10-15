@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 - If Statement</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript If Statement</h1>
+    <p>Executes a block of code <strong>only when a condition is true</strong>.</p>
+
+    <h2>Flow</h2>
+<pre>If
+ ↓
+Condition
+ ↓         ↘
+True       False
+ ↓           ↓
+Statement    Out (skip)</pre>
+
+    <h2>Example (Conceptual)</h2>
+<pre>If
+ ↓
+Today is Monday  →  False  →  Out
+ ↓
+True
+ ↓
+Print "Mon"</pre>
+
+    <h2>If Statement in JavaScript</h2>
+<pre>if (condition) {
+    statement;
+}</pre>
+
+    <h2>Example</h2>
+<pre>var x = 15;
+
+if (x &gt; 10) {
+    document.write("x is Greater");
+}</pre>
+    <p><em>(Here we use a comparison operator inside the condition.)</em></p>
+
+    <h2>Common Comparison Operators</h2>
+    <table>
+        <tr><th>Operator</th><th>Meaning</th></tr>
+        <tr><td><code>&gt;</code></td><td>greater than</td></tr>
+        <tr><td><code>&lt;</code></td><td>less than</td></tr>
+        <tr><td><code>&gt;=</code></td><td>greater than or equal to</td></tr>
+        <tr><td><code>&lt;=</code></td><td>less than or equal to</td></tr>
+        <tr><td><code>==</code></td><td>equal to</td></tr>
+        <tr><td><code>===</code></td><td>strictly equal</td></tr>
+        <tr><td><code>!=</code></td><td>not equal</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
