@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26 - While Loop</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript While Loop</h1>
+    <p>A loop is used to <strong>repeat a block of code</strong> multiple times.</p>
+
+    <h2>Without Loop vs With Loop</h2>
+
+    <h3>❌ Without Loop</h3>
+<pre>document.write("Burhan");
+document.write("Burhan");
+document.write("Burhan");</pre>
+
+    <h3>✅ With Loop</h3>
+<pre>Loop (3 Times) {
+    document.write("Burhan");
+}</pre>
+
+    <h2>Loop is Divided in 3 Parts</h2>
+<pre>Initialization
+     ↓
+┌───────────────┐
+│  Condition    │  False → Out of Loop
+└───────────────┘
+     ↓ True
+  Statement
+     ↓
+Increment / Decrement
+     ↓ (back to Condition)</pre>
+
+    <h2>Types of Loops in JavaScript</h2>
+    <ul>
+        <li>While Loop</li>
+        <li>Do / While Loop</li>
+        <li>For Loop</li>
+        <li>For / In Loop (Objects)</li>
+        <li>For Each (Array)</li>
+    </ul>
+
+    <h2>While Loop Syntax in JavaScript</h2>
+<pre>var a = 1;
+
+while (a &lt;= 10) {
+    document.write("Yahoo Baba");
+    a = a + 1;
+}</pre>
+
+    <div class="note">
+        ⚠️ <strong>Always increment</strong> the loop variable — otherwise you will create an <strong>infinite loop</strong>.
+    </div>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
