@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>29 - Break and Continue</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Break and Continue Statement</h1>
+    <p>Used inside loops to control their flow.</p>
+
+    <h2>Key Differences</h2>
+    <table>
+        <tr><th>Keyword</th><th>Purpose</th></tr>
+        <tr><td><code>break</code></td><td>Exits the loop completely</td></tr>
+        <tr><td><code>continue</code></td><td>Skips the current iteration</td></tr>
+    </table>
+
+    <div class="note">
+        ➡ <strong>continue</strong> is for <strong>continue loop</strong> (skip current iteration).<br>
+        ➡ <strong>break</strong> is for <strong>breaking loop</strong> (exit the loop entirely).
+    </div>
+
+    <h2>1. Break Example</h2>
+<pre>for (var a = 1; a &lt;= 10; a++) {
+    if (a === 3) {
+        break;
+    }
+    document.write("Hello " + a + "&lt;br&gt;");
+}</pre>
+    <p><strong>Output:</strong> Hello 1, Hello 2 (loop ends when a === 3)</p>
+
+    <h2>2. Continue Example</h2>
+<pre>for (var a = 1; a &lt;= 5; a++) {
+    if (a === 3) {
+        continue;
+    }
+    document.write("Hello " + a + "&lt;br&gt;");
+}</pre>
+    <p><strong>Output:</strong> Hello 1, Hello 2, Hello 4, Hello 5 (3 is skipped)</p>
+
+    <h2>Visual Comparison</h2>
+
+    <h3>Break</h3>
+<pre>Iteration 1 → run
+Iteration 2 → run
+Iteration 3 → ❌ BREAK (loop stops)</pre>
+
+    <h3>Continue</h3>
+<pre>Iteration 1 → run
+Iteration 2 → run
+Iteration 3 → ⏭️ SKIP
+Iteration 4 → run
+Iteration 5 → run</pre>
+
+    <h2>Common Use Cases</h2>
+    <ul>
+        <li><strong>break:</strong> searching, exiting menus, limiting iterations</li>
+        <li><strong>continue:</strong> skipping invalid values, filtering</li>
+    </ul>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
