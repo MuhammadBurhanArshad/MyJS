@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>42 - Array Method isArray()</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Array Method isArray()</h1>
+
+    <h2>Target Method</h2>
+    <ul>
+        <li><code>Array.isArray()</code> — identify if a variable is an array</li>
+    </ul>
+
+    <h2>Array-<code>isArray()</code> Function</h2>
+    <p>This function is used for <strong>identifying a variable</strong> — is that variable an <strong>array or not</strong>.</p>
+
+    <h3>Syntax</h3>
+<pre>Array.isArray(variable);</pre>
+
+    <h3>Return Values</h3>
+    <table>
+        <tr><th>Input</th><th>Returns</th></tr>
+        <tr><td>An array <code>[ ]</code></td><td><strong>true</strong></td></tr>
+        <tr><td>A number</td><td>false</td></tr>
+        <tr><td>A string</td><td>false</td></tr>
+        <tr><td>An object <code>{ }</code></td><td>false</td></tr>
+        <tr><td><code>null</code></td><td>false</td></tr>
+        <tr><td><code>undefined</code></td><td>false</td></tr>
+    </table>
+
+    <div class="note">
+        ⭐ It will return <strong>true or false</strong>.
+    </div>
+
+    <h2>Example</h2>
+<pre>var a = ["Sanjay", "Aman", "Burhan"];
+var b = 20;
+var c = "Burhan";
+
+Array.isArray(a);   // true
+Array.isArray(b);   // false
+Array.isArray(c);   // false</pre>
+
+    <h3>Store and Print</h3>
+<pre>var a = ["Sanjay", "Aman", "Burhan"];
+
+var result = Array.isArray(a);
+document.write(result);
+
+// Output: true</pre>
+
+    <h2>Why Use isArray()?</h2>
+    <p>Because <code>typeof</code> returns <code>"object"</code> for both arrays and objects:</p>
+<pre>typeof [1, 2, 3]    // "object"
+typeof { a: 1 }     // "object"   ← same!
+
+Array.isArray([1, 2, 3])  // true
+Array.isArray({ a: 1 })   // false</pre>
+
+    <h2>Comparison with typeof</h2>
+    <table>
+        <tr><th>Value</th><th>typeof</th><th>Array.isArray()</th></tr>
+        <tr><td><code>[1, 2, 3]</code></td><td>"object"</td><td><strong>true</strong></td></tr>
+        <tr><td><code>{ a: 1 }</code></td><td>"object"</td><td>false</td></tr>
+        <tr><td><code>"hello"</code></td><td>"string"</td><td>false</td></tr>
+        <tr><td><code>25</code></td><td>"number"</td><td>false</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
