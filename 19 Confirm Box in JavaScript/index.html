@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19 - Confirm Box</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        button {
+            background: #e67e22; color: white; border: none;
+            padding: 10px 18px; border-radius: 6px;
+            cursor: pointer; font-size: 14px; margin-top: 10px;
+        }
+        button:hover { background: #d35400; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Confirm Box</h1>
+    <p>Displays a popup dialog with <strong>OK</strong> and <strong>Cancel</strong> buttons.</p>
+
+    <h2>Syntax</h2>
+<pre>confirm("Your message here");</pre>
+
+    <h2>Return Values</h2>
+    <table>
+        <tr><th>User Action</th><th>Returns</th></tr>
+        <tr><td>Clicked <strong>OK</strong></td><td><code>true</code></td></tr>
+        <tr><td>Clicked <strong>Cancel</strong></td><td><code>false</code></td></tr>
+    </table>
+
+    <h2>Example</h2>
+<pre>&lt;script&gt;
+  confirm("Burhan Arshad");
+&lt;/script&gt;</pre>
+
+    <h2>Click to Trigger the Confirm Box</h2>
+    <button id="confirmBtn">Show Confirm</button>
+
+    <h2>Comparison</h2>
+    <table>
+        <tr><th>Function</th><th>Buttons</th><th>Returns</th></tr>
+        <tr><td><code>alert()</code></td><td>OK</td><td><code>undefined</code></td></tr>
+        <tr><td><code>confirm()</code></td><td>OK / Cancel</td><td><code>true</code> / <code>false</code></td></tr>
+        <tr><td><code>prompt()</code></td><td>OK / Cancel + input</td><td>string / <code>null</code></td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
