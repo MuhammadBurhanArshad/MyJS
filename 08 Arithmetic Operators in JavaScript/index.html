@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08 - Arithmetic Operators</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Arithmetic Operators</h1>
+    <p>Operators used to perform <strong>mathematical calculations</strong> on numbers.</p>
+
+    <h2>Operators</h2>
+    <table>
+        <tr><th>Operator</th><th>Description</th></tr>
+        <tr><td><code>+</code></td><td>Addition</td></tr>
+        <tr><td><code>-</code></td><td>Subtraction</td></tr>
+        <tr><td><code>*</code></td><td>Multiplication</td></tr>
+        <tr><td><code>**</code></td><td>Exponentiation</td></tr>
+        <tr><td><code>/</code></td><td>Division</td></tr>
+        <tr><td><code>%</code></td><td>Modulus (Remainder)</td></tr>
+        <tr><td><code>++</code></td><td>Increment</td></tr>
+        <tr><td><code>--</code></td><td>Decrement</td></tr>
+    </table>
+
+    <h2>Basic Example</h2>
+<pre>var a = 20;
+var b = 10;
+var c = a + b;
+
+document.write(c);   // 30</pre>
+
+    <h2>Division vs Modulus (14 ÷ 2)</h2>
+<pre>         7      ← Division (/)
+       ┌─────
+     2 │ 14
+       │ -14
+       ──────
+         0      ← Modulus (%)</pre>
+
+    <h2>Increment &amp; Decrement</h2>
+<pre>var x = 5;
+x++;   // x becomes 6
+x--;   // x becomes 5</pre>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
