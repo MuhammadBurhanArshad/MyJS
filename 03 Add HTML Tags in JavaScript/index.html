@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 - Add HTML Tags in JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #writeOutput { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-top: 10px; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Add HTML Tags in JavaScript</h1>
+
+    <h2>1. The &lt;script&gt; Tag</h2>
+    <p>All JavaScript code lives inside the <code>&lt;script&gt;</code> tag:</p>
+<pre>&lt;script&gt;
+  // JavaScript code here
+&lt;/script&gt;</pre>
+
+    <h2>2. document.write() Method</h2>
+    <p>Writes text or HTML directly to the page:</p>
+<pre>document.write("&lt;h1&gt;Muhammad Burhan&lt;/h1&gt;");
+document.write("&lt;b&gt;Muhammad Burhan&lt;/b&gt;");</pre>
+
+    <h2>3. Live Output (rendered by JavaScript)</h2>
+    <p>The content below was generated using HTML tags from JavaScript:</p>
+    <div id="writeOutput"></div>
+
+    <div class="note">
+        ⚠️ <strong>Note:</strong> <code>document.write()</code> only works during initial page load.
+        After the page has loaded, it will <strong>overwrite</strong> the whole document.
+        For post-load updates, use <code>innerHTML</code> / <code>textContent</code> instead.
+    </div>
+
+    <h2>4. Common HTML Tags You Can Write</h2>
+    <ul>
+        <li><code>&lt;h1&gt;</code> – <code>&lt;h6&gt;</code> — Headings</li>
+        <li><code>&lt;b&gt;</code> — Bold text</li>
+        <li><code>&lt;i&gt;</code> — Italic text</li>
+        <li><code>&lt;u&gt;</code> — Underline</li>
+        <li><code>&lt;p&gt;</code> — Paragraph</li>
+        <li><code>&lt;br&gt;</code> — Line break</li>
+        <li><code>&lt;a&gt;</code> — Hyperlink</li>
+        <li><code>&lt;img&gt;</code> — Image</li>
+    </ul>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
