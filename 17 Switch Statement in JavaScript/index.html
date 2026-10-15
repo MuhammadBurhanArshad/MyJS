@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17 - Switch Statement</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Switch Statement</h1>
+    <p>Selects <strong>one block</strong> from many based on a value. A cleaner alternative to long <code>if else if</code> chains.</p>
+
+    <h2>Syntax</h2>
+<pre>switch (expression) {
+    case condition1:
+        statement(s);
+        break;
+
+    case condition2:
+        statement(s);
+        break;
+
+    case condition3:
+        statement(s);
+        break;
+
+    default:
+        statement(s);
+}</pre>
+
+    <h2>Parts of a Switch</h2>
+    <table>
+        <tr><th>Part</th><th>Purpose</th></tr>
+        <tr><td><code>switch (expression)</code></td><td>Value to be evaluated</td></tr>
+        <tr><td><code>case value:</code></td><td>A possible match</td></tr>
+        <tr><td><code>break;</code></td><td>Stops execution and exits the switch</td></tr>
+        <tr><td><code>default:</code></td><td>Runs if no case matches</td></tr>
+    </table>
+
+    <h2>Example — Day of the Week</h2>
+<pre>var day = 3;
+
+switch (day) {
+    case 1: document.write("Monday");    break;
+    case 2: document.write("Tuesday");   break;
+    case 3: document.write("Wednesday"); break;
+    case 4: document.write("Thursday");  break;
+    default: document.write("Unknown day");
+}</pre>
+
+    <div class="note">
+        ⚠️ <strong>Don't forget <code>break;</code></strong> — otherwise the code "falls through" to the next cases.
+    </div>
+
+    <h2>Switch vs If Else If</h2>
+    <table>
+        <tr><th>Feature</th><th>switch</th><th>if else if</th></tr>
+        <tr><td>Compares</td><td>One value vs many cases</td><td>Any condition</td></tr>
+        <tr><td>Readability</td><td>✅ Clean for many cases</td><td>❌ Gets long</td></tr>
+        <tr><td>Uses break</td><td>Yes</td><td>No</td></tr>
+        <tr><td>Range checks</td><td>❌ No</td><td>✅ Yes</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
