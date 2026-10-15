@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07 - Data Types in JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Data Types</h1>
+    <p>A <strong>data type</strong> describes the kind of value a variable holds.</p>
+    <p>Example: <code>var x = "Hello World";</code> → <strong>String</strong></p>
+
+    <h2>Different Types of Data</h2>
+    <table>
+        <tr><th>Value</th><th>Data Type</th></tr>
+        <tr><td><code>"Hello World"</code></td><td>String</td></tr>
+        <tr><td><code>25</code></td><td>Number</td></tr>
+        <tr><td><code>true</code></td><td>Boolean</td></tr>
+        <tr><td><code>["HTML","CSS","JS"]</code></td><td>Array → Object</td></tr>
+        <tr><td><code>{first:"Burhan",last:"Arshad"}</code></td><td>Object</td></tr>
+        <tr><td><code>null</code></td><td>Null</td></tr>
+        <tr><td><code>var x;</code></td><td>Undefined</td></tr>
+    </table>
+
+    <h2>Examples</h2>
+<pre>var x = "Hello World";                    // String
+var x = 25;                               // Number
+var x = true;                             // Boolean
+var x = ["HTML", "CSS", "JS"];            // Array → Object
+var x = { first:"Burhan", last:"Arshad" };// Object
+var x = null;                             // Null
+var x;                                    // Undefined</pre>
+
+    <h2>typeof Operator</h2>
+    <p>Used to find out the type of a variable's value:</p>
+<pre>document.write(typeof x);</pre>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
