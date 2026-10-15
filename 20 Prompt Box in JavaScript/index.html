@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20 - Prompt Box</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        button {
+            background: #27ae60; color: white; border: none;
+            padding: 10px 18px; border-radius: 6px;
+            cursor: pointer; font-size: 14px; margin-top: 10px;
+        }
+        button:hover { background: #1e8449; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Prompt Box</h1>
+    <p>Displays a popup dialog that asks the user for <strong>text input</strong>.</p>
+
+    <h2>Syntax</h2>
+<pre>prompt("Your message here");</pre>
+
+    <h2>Return Values</h2>
+    <table>
+        <tr><th>User Action</th><th>Returns</th></tr>
+        <tr><td>Entered text + clicked <strong>OK</strong></td><td>The entered string</td></tr>
+        <tr><td>Clicked <strong>Cancel</strong></td><td><code>null</code></td></tr>
+    </table>
+
+    <h2>Example</h2>
+<pre>&lt;script&gt;
+  prompt("What is your name?");
+&lt;/script&gt;</pre>
+
+    <h2>Click to Trigger the Prompt Box</h2>
+    <button id="promptBtn">Show Prompt</button>
+
+    <h2>Comparison</h2>
+    <table>
+        <tr><th>Function</th><th>Purpose</th><th>Returns</th></tr>
+        <tr><td><code>alert()</code></td><td>Show a message</td><td><code>undefined</code></td></tr>
+        <tr><td><code>confirm()</code></td><td>Ask OK / Cancel</td><td><code>true</code> / <code>false</code></td></tr>
+        <tr><td><code>prompt()</code></td><td>Take text input</td><td>string / <code>null</code></td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
