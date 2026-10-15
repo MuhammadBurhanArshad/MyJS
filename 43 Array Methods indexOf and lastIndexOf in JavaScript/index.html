@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>43 - Array Methods indexOf() & lastIndexOf()</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Array Methods indexOf() &amp; lastIndexOf()</h1>
+
+    <h2>Target Methods</h2>
+    <ul>
+        <li><code>indexOf()</code> — searches from start</li>
+        <li><code>lastIndexOf()</code> — searches from last</li>
+    </ul>
+
+    <h2>1. indexOf() Function</h2>
+    <p>Searches a value from the <strong>start</strong> of the array and returns the <strong>first matching index</strong>.</p>
+
+    <h3>Parameters</h3>
+    <ul>
+        <li><strong>First</strong> — the value to search for</li>
+        <li><strong>Second</strong> (optional) — the index to start searching from</li>
+    </ul>
+
+    <h3>Syntax</h3>
+<pre>arrayName.indexOf("search item", start);</pre>
+
+    <h3>Example</h3>
+<pre>var a = ["Sanjay", "Aman", "Burhan"];
+var b = a.indexOf("Burhan", 1);
+document.write(b);
+
+// Output: 2</pre>
+
+    <h2>2. lastIndexOf() Function</h2>
+    <p>Searches a value from the <strong>last</strong> of the array and returns the <strong>last matching index</strong>.</p>
+
+    <h3>Parameters</h3>
+    <ul>
+        <li><strong>First</strong> — the value to search for</li>
+        <li><strong>Second</strong> (optional) — the index to start searching backwards from</li>
+    </ul>
+
+    <h3>Syntax</h3>
+<pre>arrayName.lastIndexOf("search item", start);</pre>
+
+    <h3>Example</h3>
+<pre>var a = ["Sanjay", "Aman", "Burhan"];
+var b = a.lastIndexOf("Burhan", 2);
+document.write(b);
+
+// Output: 2</pre>
+
+    <div class="note">
+        ⭐ It will return the <strong>number of index of given value</strong>.<br>
+        ⭐ For <strong>not found</strong>, it will return <strong>(-1)</strong>.
+    </div>
+
+    <h2>Difference with Duplicates</h2>
+<pre>var a = ["Sanjay", "Aman", "Burhan", "Aman", "Rehman"];
+
+a.indexOf("Aman");       // 1  (first match)
+a.lastIndexOf("Aman");   // 3  (last match)</pre>
+
+    <table>
+        <tr><th>Method</th><th>Search Direction</th><th>Returns</th></tr>
+        <tr><td><code>indexOf()</code></td><td>Left → Right</td><td>First matching index</td></tr>
+        <tr><td><code>lastIndexOf()</code></td><td>Right → Left</td><td>Last matching index</td></tr>
+    </table>
+
+    <h2>Return Values</h2>
+    <table>
+        <tr><th>Situation</th><th>indexOf()</th><th>lastIndexOf()</th></tr>
+        <tr><td>Value found</td><td>Its index</td><td>Its index</td></tr>
+        <tr><td>Value not found</td><td><strong>-1</strong></td><td><strong>-1</strong></td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
