@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35 - Multi Dimensional Array</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Multi Dimensional Array</h1>
+    <p>An <strong>array inside an array</strong> — used for tables, matrices, and records.</p>
+
+    <h2>What is a Multi Dimensional Array?</h2>
+    <p>A multi dimensional array is used for <strong>making an array in array</strong>.</p>
+
+    <h2>Syntax</h2>
+<pre>var a = [
+    ["Harray", 18, "Male", "B.Com"],
+    ["Sunny",  19, "Male", "BCA"],
+    ["Burhan", 18, "Male", "CS"]
+];</pre>
+
+    <h2>Visual Layout</h2>
+<pre>         0         1        2        3
+     ┌─────────┬──────┬────────┬──────────┐
+0    │ Harray  │ 18   │ Male   │ B.Com    │
+1    │ Sunny   │ 19   │ Male   │ BCA      │
+2    │ Burhan  │ 18   │ Male   │ CS       │
+     └─────────┴──────┴────────┴──────────┘</pre>
+
+    <h2>Accessing Values</h2>
+<pre>a[0][0]   // "Harray"
+a[0][1]   // 18
+a[1][0]   // "Sunny"
+a[2][3]   // "CS"</pre>
+
+    <h2>Array Length</h2>
+<pre>a.length       // 3  (outer — rows)
+a[0].length    // 4  (inner — columns)</pre>
+
+    <div class="note">
+        <code>a.length</code> is for taking the <strong>length of an array</strong>.
+    </div>
+
+    <h2>Traversing with Nested Loops</h2>
+<pre>for (var row = 0; row &lt; a.length; row++) {
+    for (var col = 0; col &lt; a[row].length; col++) {
+        document.write(a[row][col] + " ");
+    }
+    document.write("&lt;br&gt;");
+}</pre>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
