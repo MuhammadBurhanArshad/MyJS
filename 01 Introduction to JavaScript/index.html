@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - JavaScript Introduction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            color: #222;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        #demoBox {
+            width: 200px;
+            height: 100px;
+            background: #3498db;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            cursor: pointer;
+            user-select: none;
+            margin: 15px 0;
+            transition: transform 0.2s, background 0.2s;
+        }
+        #demoBox:hover { background: #2980b9; transform: scale(1.05); }
+        #eventLog {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-size: 14px;
+        }
+        #eventLog p { margin: 4px 0; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Introduction</h1>
+
+    <h2>1. What is JavaScript?</h2>
+    <p>
+        JavaScript is a <strong>web-based, client-side scripting language</strong>
+        that makes web pages interactive. It runs in the browser and responds
+        to user events.
+    </p>
+
+    <h2>2. Live Event Demo</h2>
+    <p>Interact with the box below to see event-based programming in action:</p>
+    <div id="demoBox">Click / Hover Me</div>
+
+    <p>Try also: <code>resize</code> the window, <code>scroll</code>, or press a key.</p>
+
+    <h2>3. Event Log</h2>
+    <div id="eventLog"></div>
+
+    <h2>4. Benefits of Learning JavaScript</h2>
+    <ul>
+        <li>🌐 Web Development</li>
+        <li>🖥️ Desktop App Development (ElectronJS)</li>
+        <li>📱 Mobile App Development (React Native)</li>
+    </ul>
+
+    <h2>5. What You Can Learn</h2>
+    <ul>
+        <li><strong>Web:</strong> jQuery, AngularJS, ReactJS, VueJS, NodeJS</li>
+        <li><strong>Desktop:</strong> ElectronJS</li>
+        <li><strong>Mobile:</strong> AngularJS, ReactJS, VueJS, React Native, NodeJS</li>
+    </ul>
+
+    <p><em>Note: Node.js is also a backend language.</em></p>
+
+    <script src="index.js"></script>
+</body>
+</html>
