@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18 - Alert Box</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        button {
+            background: #3498db; color: white; border: none;
+            padding: 10px 18px; border-radius: 6px;
+            cursor: pointer; font-size: 14px; margin-top: 10px;
+        }
+        button:hover { background: #2980b9; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Alert Box</h1>
+    <p>Displays a <strong>popup dialog</strong> with a message and an <strong>OK</strong> button.</p>
+
+    <h2>Syntax</h2>
+<pre>alert("Your message here");</pre>
+
+    <h2>Example</h2>
+<pre>&lt;script&gt;
+  alert("Burhan Arshad");
+&lt;/script&gt;</pre>
+
+    <h2>Click to Trigger the Alert</h2>
+    <button id="alertBtn">Show Alert</button>
+
+    <h2>Key Points</h2>
+    <ul>
+        <li>Built-in browser function</li>
+        <li>Takes a string as argument</li>
+        <li>Has a single <strong>OK</strong> button</li>
+        <li>Blocks page until the user clicks OK</li>
+    </ul>
+
+    <h2>alert() vs confirm() vs prompt()</h2>
+    <table>
+        <tr><th>Function</th><th>Purpose</th></tr>
+        <tr><td><code>alert()</code></td><td>Message with OK</td></tr>
+        <tr><td><code>confirm()</code></td><td>Message with OK / Cancel</td></tr>
+        <tr><td><code>prompt()</code></td><td>Asks for text input</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
