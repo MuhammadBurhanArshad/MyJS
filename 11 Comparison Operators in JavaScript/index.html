@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11 - Comparison Operators</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Comparison Operators</h1>
+    <p>Compare two values and return <strong>true</strong> or <strong>false</strong>.</p>
+
+    <h2>Basic Example</h2>
+<pre>var x = 15;
+var y = 25;
+
+x &gt; y      // false</pre>
+
+    <h2>Different Types of Comparison Operators</h2>
+    <table>
+        <tr><th>Operator</th><th>Description</th></tr>
+        <tr><td><code>==</code></td><td>equal to</td></tr>
+        <tr><td><code>===</code></td><td>equal value and equal type</td></tr>
+        <tr><td><code>!=</code></td><td>not equal</td></tr>
+        <tr><td><code>!==</code></td><td>not equal value or not equal type</td></tr>
+        <tr><td><code>&gt;</code></td><td>greater than</td></tr>
+        <tr><td><code>&lt;</code></td><td>less than</td></tr>
+        <tr><td><code>&gt;=</code></td><td>greater than or equal to</td></tr>
+        <tr><td><code>&lt;=</code></td><td>less than or equal to</td></tr>
+    </table>
+
+    <h2>== vs === </h2>
+<pre>5 ==  "5"   // true   (value only)
+5 === "5"   // false  (value AND type)
+5 !=  "5"   // false
+5 !== "5"   // true</pre>
+
+    <div class="note">
+        ⭐ <strong>Best Practice:</strong> Prefer <code>===</code> and <code>!==</code> over <code>==</code> and <code>!=</code>
+        to avoid unexpected type coercion.
+    </div>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
