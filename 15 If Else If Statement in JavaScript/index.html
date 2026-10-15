@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 - If Else If Statement</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript If Else If Statement</h1>
+    <p>Used when there are <strong>more than two conditions</strong>. The <strong>first true condition</strong> wins.</p>
+
+    <h2>Syntax</h2>
+<pre>if (condition1) {
+    // ...
+} else if (condition2) {
+    // ...
+} else {
+    // ...
+}</pre>
+
+    <h2>Example — Greeting by Time</h2>
+<pre>if (time &lt; 10) {
+    document.write("Good Morning");
+} else if (time &lt; 20) {
+    document.write("Good day");
+} else {
+    document.write("Good evening");
+}</pre>
+
+    <h2>Example Topic — Grade by Percentage</h2>
+    <table>
+        <tr><th>Percentage</th><th>Grade</th></tr>
+        <tr><td>80 – 100%</td><td>Merit</td></tr>
+        <tr><td>60 – 79%</td><td>1st Division</td></tr>
+        <tr><td>45 – 59%</td><td>2nd Division</td></tr>
+        <tr><td>33 – 44%</td><td>3rd Division</td></tr>
+        <tr><td>Less than 33%</td><td>Fail</td></tr>
+    </table>
+
+    <h2>Implementation</h2>
+<pre>var percentage = 75;
+
+if (percentage &gt;= 80 &amp;&amp; percentage &lt;= 100) {
+    document.write("Merit");
+} else if (percentage &gt;= 60 &amp;&amp; percentage &lt;= 79) {
+    document.write("1st Division");
+} else if (percentage &gt;= 45 &amp;&amp; percentage &lt;= 59) {
+    document.write("2nd Division");
+} else if (percentage &gt;= 33 &amp;&amp; percentage &lt;= 44) {
+    document.write("3rd Division");
+} else {
+    document.write("Fail");
+}</pre>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
