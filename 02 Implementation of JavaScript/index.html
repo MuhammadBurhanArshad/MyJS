@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 - JavaScript Implementation</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        button { background: #3498db; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; margin: 5px 5px 5px 0; font-size: 14px; }
+        button:hover { background: #2980b9; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Implementation</h1>
+    <p>There are <strong>2 ways</strong> to implement JavaScript in HTML:</p>
+    <ol>
+        <li><strong>Internal</strong> — code inside <code>&lt;script&gt;</code> tag</li>
+        <li><strong>External</strong> — linked <code>.js</code> file</li>
+    </ol>
+
+    <h2>1. Internal JavaScript</h2>
+    <p>Code is written directly inside the <code>&lt;script&gt;</code> tag inside <code>&lt;head&gt;</code>:</p>
+<pre>&lt;html&gt;
+  &lt;head&gt;
+    &lt;script&gt;
+      console.log("Internal JS");
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt; ... &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+    <h2>2. External JavaScript</h2>
+    <p>Code lives in a separate <code>.js</code> file and is linked via <code>src</code>:</p>
+<pre>&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src="myScript.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt; ... &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+    <h2>⭐ Best Practice</h2>
+    <p>Place <code>&lt;script&gt;</code> at the <strong>end of &lt;body&gt;</strong>:</p>
+<pre>&lt;body&gt;
+  &lt;h1&gt;Hello&lt;/h1&gt;
+  &lt;script src="myScript.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</pre>
+
+    <h2>Live Demo</h2>
+    <p>This page uses <strong>external JavaScript</strong> (<code>index.js</code>) loaded at the end of <code>&lt;body&gt;</code>.</p>
+    <button onclick="showExternalMessage()">Click for External JS Alert</button>
+
+    <h2>Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
