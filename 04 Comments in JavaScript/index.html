@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 - JavaScript Comments</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Comments</h1>
+    <p>Comments are ignored by the JavaScript engine. There are <strong>2 types</strong>:</p>
+    <ol>
+        <li><strong>Single Line</strong> — <code>//</code></li>
+        <li><strong>Multiple Line</strong> — <code>/* ... */</code></li>
+    </ol>
+
+    <h2>1. Single Line Comment</h2>
+<pre>&lt;script&gt;
+  document.write("Burhan"); // Comment
+&lt;/script&gt;</pre>
+
+    <h2>2. Multiple Line Comment</h2>
+<pre>&lt;script&gt;
+  document.write("Burhan"); /* This is
+  Multiple line Comment */
+&lt;/script&gt;</pre>
+
+    <h2>Comparison</h2>
+    <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+        <tr><th>Type</th><th>Symbol</th><th>Use Case</th></tr>
+        <tr><td>Single Line</td><td><code>//</code></td><td>Short notes</td></tr>
+        <tr><td>Multiple Line</td><td><code>/* ... */</code></td><td>Long descriptions / block disable</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
