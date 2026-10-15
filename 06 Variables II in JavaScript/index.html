@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06 - Variables (let & const)</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: center; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Variables (let &amp; const)</h1>
+
+    <p><strong>Rules:</strong></p>
+    <ul>
+        <li><code>let</code> cannot be declared twice.</li>
+        <li><code>var</code> can be declared twice.</li>
+        <li><code>const</code> is not editable or re-declarable.</li>
+    </ul>
+
+    <h2>Declaration Examples</h2>
+<pre>var   a = "Burhan";
+let   a = "Burhan";
+const a = "Burhan";</pre>
+
+    <h2>Behavior Comparison</h2>
+
+    <h3>var</h3>
+<pre>var x = "Hello";   ✅
+var x = "World";   ✅ (redeclared)
+x = "Wow";         ✅ (reassigned)</pre>
+
+    <h3>let</h3>
+<pre>let x = "Hello";   ✅
+let x = "World";   ❌ (redeclaration not allowed)
+x = "Wow";         ✅ (reassigned)</pre>
+
+    <h3>const</h3>
+<pre>const x = "Hello"; ✅
+const x = "World"; ❌ (redeclaration not allowed)
+x = "Wow";         ❌ (reassignment not allowed)</pre>
+
+    <h2>Summary Table</h2>
+    <table>
+        <tr><th>Keyword</th><th>Re-Declare?</th><th>Re-Assign?</th></tr>
+        <tr><td><code>var</code></td><td>✅ Yes</td><td>✅ Yes</td></tr>
+        <tr><td><code>let</code></td><td>❌ No</td><td>✅ Yes</td></tr>
+        <tr><td><code>const</code></td><td>❌ No</td><td>❌ No</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
