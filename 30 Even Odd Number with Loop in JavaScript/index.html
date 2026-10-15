@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30 - Even/Odd Number with Loop</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; max-height: 400px; overflow-y: auto; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Even / Odd Number with Loop</h1>
+
+    <h2>Rule</h2>
+    <table>
+        <tr><th>Condition</th><th>Type</th></tr>
+        <tr><td><code>a % 2 === 0</code></td><td>Even</td></tr>
+        <tr><td><code>a % 2 !== 0</code></td><td>Odd</td></tr>
+    </table>
+
+    <h2>Finding Even Numbers</h2>
+<pre>for (var a = 1; a &lt;= 100; a++) {
+    if (a % 2 == 0) {
+        document.write(a + " is Even &lt;br&gt;");
+    }
+}</pre>
+
+    <h2>Finding Odd Numbers</h2>
+<pre>for (var a = 1; a &lt;= 100; a++) {
+    if (a % 2 != 0) {
+        document.write(a + " is Odd &lt;br&gt;");
+    }
+}</pre>
+
+    <h2>Both Even and Odd in One Loop</h2>
+<pre>for (var a = 1; a &lt;= 10; a++) {
+    if (a % 2 == 0) {
+        document.write(a + " → Even &lt;br&gt;");
+    } else {
+        document.write(a + " → Odd &lt;br&gt;");
+    }
+}</pre>
+
+    <h2>Modulus Examples</h2>
+    <table>
+        <tr><th>Expression</th><th>Result</th><th>Type</th></tr>
+        <tr><td><code>4 % 2</code></td><td>0</td><td>Even</td></tr>
+        <tr><td><code>5 % 2</code></td><td>1</td><td>Odd</td></tr>
+        <tr><td><code>10 % 2</code></td><td>0</td><td>Even</td></tr>
+        <tr><td><code>11 % 2</code></td><td>1</td><td>Odd</td></tr>
+    </table>
+
+    <div class="note">
+        ⭐ <strong>Rule:</strong> If <code>a % 2 === 0</code>, then <code>a</code> is <strong>even</strong>.
+        Otherwise, it is <strong>odd</strong>.
+    </div>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
