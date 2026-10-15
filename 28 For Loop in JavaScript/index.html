@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28 - For Loop</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript For Loop</h1>
+    <p>Combines all 3 parts of a loop — <strong>initialization</strong>, <strong>condition</strong>, and <strong>increment/decrement</strong> — into a single line.</p>
+
+    <h2>Syntax</h2>
+<pre>for (initialization; condition; increment/decrement) {
+    statement
+}</pre>
+
+    <h3>The 3 Parts</h3>
+<pre>for ( var a = 1 ;  a &lt;= 10 ;  a++ )  {
+      ↑              ↑          ↑
+Initialization   Condition  Increment/Decrement
+}</pre>
+
+    <table>
+        <tr><th>Part</th><th>Purpose</th></tr>
+        <tr><td>Initialization</td><td>Runs once, before the loop starts</td></tr>
+        <tr><td>Condition</td><td>Checked before each iteration</td></tr>
+        <tr><td>Increment / Decrement</td><td>Updates the loop variable after each iteration</td></tr>
+    </table>
+
+    <h2>Example</h2>
+<pre>for (var a = 1; a &lt;= 10; a++) {
+    document.write("Burhan");
+}</pre>
+    <p>Prints "Burhan" <strong>10 times</strong>.</p>
+
+    <h2>Count 1 to 5</h2>
+<pre>for (var i = 1; i &lt;= 5; i++) {
+    document.write(i + "&lt;br&gt;");
+}</pre>
+
+    <h2>Count Down 10 to 1</h2>
+<pre>for (var i = 10; i &gt;= 1; i--) {
+    document.write(i + " ");
+}</pre>
+
+    <h2>For vs While</h2>
+    <table>
+        <tr><th>Feature</th><th>for</th><th>while</th></tr>
+        <tr><td>Parts location</td><td>All in one line</td><td>Scattered</td></tr>
+        <tr><td>Readability</td><td>✅ Compact, clear</td><td>⚠️ Easier to forget update</td></tr>
+        <tr><td>Best for</td><td>Known iteration count</td><td>Unknown iteration count</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
