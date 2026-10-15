@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16 - Conditional (Ternary) Operator</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Conditional (Ternary) Operator</h1>
+    <p>A shorthand for the <code>if else</code> statement.</p>
+
+    <h2>Flow</h2>
+<pre>Conditions → False → Statement2
+    ↓
+   True
+    ↓
+Statement1</pre>
+
+    <h2>Syntax</h2>
+<pre>(condition) ? true_statement : false_statement;</pre>
+
+    <div class="note">
+        ⚠️ The ternary operator <strong>only supports two statements</strong> — one for <strong>true</strong> and one for <strong>false</strong>.
+    </div>
+
+    <h2>Example</h2>
+<pre>var x = 15;
+var z;
+
+(x &gt; 10) ? z = "True" : z = "False";
+
+document.write(z);</pre>
+
+    <h2>Comparison with if else</h2>
+<pre>// if else version
+if (x &gt; 10) {
+    z = "True";
+} else {
+    z = "False";
+}
+
+// ternary version
+(x &gt; 10) ? z = "True" : z = "False";</pre>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
