@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>33 - Arrays in JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Arrays</h1>
+    <p>An array is a variable that holds <strong>multiple values</strong>.</p>
+
+    <h2>Data Types in JavaScript</h2>
+    <ul>
+        <li>String</li>
+        <li>Number</li>
+        <li>Boolean</li>
+        <li>Array</li>
+        <li>Object</li>
+        <li>Null</li>
+        <li>Undefined</li>
+    </ul>
+
+    <h2>What is an Array?</h2>
+
+    <h3>❌ Wrong Ways</h3>
+<pre>var a = 10, 20, 30;       // ❌ Error
+var a = "10, 20, 30";     // ❌ String, not Array</pre>
+
+    <h3>✅ Correct Way</h3>
+<pre>var a = [10, 20, 30];     // ✅ Array</pre>
+
+    <h2>How an Array Stores Values</h2>
+<pre>var a = [10, 20, 30]
+         0   1   2    ← index</pre>
+
+    <table>
+        <tr><th>Index</th><th>Value</th></tr>
+        <tr><td>0</td><td>10</td></tr>
+        <tr><td>1</td><td>20</td></tr>
+        <tr><td>2</td><td>30</td></tr>
+    </table>
+
+    <div class="note">
+        ⚠️ <strong>Indexing starts from 0</strong>, not 1.
+    </div>
+
+    <h2>Accessing Elements</h2>
+<pre>var a = [10, 20, 30];
+
+a[0]   // 10
+a[1]   // 20
+a[2]   // 30
+a.length  // 3</pre>
+
+    <h2>Update a Value</h2>
+<pre>var a = [10, 20, 30];
+a[1] = 99;
+// a → [10, 99, 30]</pre>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
