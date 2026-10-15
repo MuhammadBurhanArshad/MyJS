@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>38 - Array Method pop() & push()</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Array Method pop() &amp; push()</h1>
+
+    <h2>Array Methods for Now</h2>
+    <ul>
+        <li><code>pop()</code> — removes the last value</li>
+        <li><code>push()</code> — adds a value to the end</li>
+    </ul>
+
+    <h2>1. pop() Method</h2>
+    <p>Removes the <strong>last value</strong> from an array.</p>
+
+    <h3>Syntax</h3>
+<pre>arrayName.pop();</pre>
+
+    <h3>Example</h3>
+<pre>var a = ["Sanjay", "Aman", "Burhan", "Rehman"];
+a.pop();
+// a → ["Sanjay", "Aman", "Burhan"]</pre>
+
+    <table>
+        <tr><th>Index</th><th>Before</th><th>After</th></tr>
+        <tr><td>0</td><td>"Sanjay"</td><td>"Sanjay"</td></tr>
+        <tr><td>1</td><td>"Aman"</td><td>"Aman"</td></tr>
+        <tr><td>2</td><td>"Burhan"</td><td>"Burhan"</td></tr>
+        <tr><td>3</td><td>"Rehman"</td><td><em>(removed)</em></td></tr>
+    </table>
+
+    <h2>2. push() Method</h2>
+    <p>Adds a value to the <strong>end</strong> of an array.</p>
+
+    <h3>Syntax</h3>
+<pre>arrayName.push(value);</pre>
+
+    <h3>Example</h3>
+<pre>var a = ["Sanjay", "Aman", "Burhan"];
+a.push("Rehman");
+// a → ["Sanjay", "Aman", "Burhan", "Rehman"]</pre>
+
+    <table>
+        <tr><th>Index</th><th>Before</th><th>After</th></tr>
+        <tr><td>0</td><td>"Sanjay"</td><td>"Sanjay"</td></tr>
+        <tr><td>1</td><td>"Aman"</td><td>"Aman"</td></tr>
+        <tr><td>2</td><td>"Burhan"</td><td>"Burhan"</td></tr>
+        <tr><td>3</td><td>—</td><td><strong>"Rehman"</strong></td></tr>
+    </table>
+
+    <div class="note">
+        ⭐ <strong>pop() removes the last value.</strong><br>
+        ⭐ <strong>push() adds a value to the end.</strong>
+    </div>
+
+    <h2>Comparison</h2>
+    <table>
+        <tr><th>Feature</th><th>pop()</th><th>push()</th></tr>
+        <tr><td>Action</td><td>Removes last</td><td>Adds at end</td></tr>
+        <tr><td>Length change</td><td>−1</td><td>+1</td></tr>
+        <tr><td>Returns</td><td>Removed element</td><td>New length</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
