@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23 - Functions with Return Value</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Functions with Return Value</h1>
+    <p>The <code>return</code> keyword <strong>sends a value back</strong> to the caller.</p>
+
+    <h2>Syntax</h2>
+<pre>function functionName(parameter1, parameter2) {
+    statements
+    return value;
+}
+
+var a = functionName(argument1, argument2);</pre>
+
+    <h2>Example — Sum with Return</h2>
+<pre>function sum(a, b) {
+    return a + b;
+}
+
+var result = sum(10, 20);   // 30
+document.write(result);</pre>
+
+    <h2>More Examples</h2>
+
+    <h3>Multiply</h3>
+<pre>function multiply(x, y) {
+    return x * y;
+}
+
+var total = multiply(5, 4);   // 20</pre>
+
+    <h3>Greet</h3>
+<pre>function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+var msg = greet("Burhan");   // Hello, Burhan!</pre>
+
+    <h3>Max of Two Numbers</h3>
+<pre>function max(a, b) {
+    if (a &gt; b) {
+        return a;
+    } else {
+        return b;
+    }
+}
+
+document.write(max(15, 25));   // 25</pre>
+
+    <h2>return vs document.write</h2>
+    <table>
+        <tr><th>document.write</th><th>return</th></tr>
+        <tr><td>Prints to the page</td><td>Sends value back to caller</td></tr>
+        <tr><td>Value not reusable</td><td>Value can be stored &amp; reused</td></tr>
+        <tr><td>Used for output</td><td>Used for computation</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
