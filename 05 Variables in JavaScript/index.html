@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 - Variables in JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+
+    <h1>Variables in JavaScript</h1>
+    <p>A <strong>variable</strong> stores a value and can be used multiple times.</p>
+
+    <h2>Use of Variables</h2>
+<pre>A = Burhan Arshad
+
+document.write(A);
+document.write(A);
+document.write(A);</pre>
+
+    <h2>⚠️ No Commas Around Variable Names</h2>
+<pre>document.write("Z");   ❌ prints letter Z (string)
+document.write(Z);     ✅ prints value of variable Z</pre>
+
+    <h2>Three Types of Variables</h2>
+    <table>
+        <tr><th>Keyword</th><th>Description</th></tr>
+        <tr><td><code>var</code></td><td>Function-scoped, oldest way</td></tr>
+        <tr><td><code>let</code></td><td>Block-scoped, reassignable</td></tr>
+        <tr><td><code>const</code></td><td>Block-scoped, cannot be reassigned</td></tr>
+    </table>
+
+    <h2>How to Use Variables</h2>
+<pre>&lt;script&gt;
+  var x = "Burhan Arshad";
+&lt;/script&gt;</pre>
+    <ul>
+        <li><code>var</code> → keyword</li>
+        <li><code>x</code> → variable name</li>
+        <li><code>"Burhan Arshad"</code> → variable value</li>
+    </ul>
+
+    <h2>Variable Naming</h2>
+    <p><strong>✅ Write Way:</strong></p>
+    <ul>
+        <li>firstname</li>
+        <li>first_name</li>
+        <li>first-name</li>
+        <li>firstName</li>
+        <li>firstname99</li>
+    </ul>
+
+    <p><strong>❌ Wrong Way:</strong></p>
+    <ul>
+        <li>first name (no spaces)</li>
+        <li>99firstname (cannot start with a number)</li>
+    </ul>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
