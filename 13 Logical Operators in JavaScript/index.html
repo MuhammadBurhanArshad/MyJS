@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13 - Logical Operators</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Logical Operators</h1>
+    <p>Used to <strong>combine multiple conditions</strong> in a single <code>if</code>.</p>
+
+    <h2>Flow</h2>
+<pre>If →  Condition 1
+      Condition 2 → False → Out
+         ↓
+        True
+         ↓
+      Statement</pre>
+
+    <h2>Types of Logical Operators</h2>
+    <table>
+        <tr><th>Operator</th><th>Name</th></tr>
+        <tr><td><code>&amp;&amp;</code></td><td>Logical AND</td></tr>
+        <tr><td><code>||</code></td><td>Logical OR</td></tr>
+        <tr><td><code>!</code></td><td>Logical NOT</td></tr>
+    </table>
+
+    <h2>1. If Statement with Logical AND</h2>
+<pre>if (condition1 &amp;&amp; condition2) {
+    // Run only when BOTH conditions are TRUE
+}</pre>
+    <table>
+        <tr><th>C1</th><th>C2</th><th>Result</th></tr>
+        <tr><td>true</td><td>true</td><td>true</td></tr>
+        <tr><td>true</td><td>false</td><td>false</td></tr>
+        <tr><td>false</td><td>true</td><td>false</td></tr>
+        <tr><td>false</td><td>false</td><td>false</td></tr>
+    </table>
+
+    <h2>2. If Statement with Logical OR</h2>
+<pre>if (condition1 || condition2) {
+    // Run when EITHER one condition is TRUE
+}</pre>
+    <table>
+        <tr><th>C1</th><th>C2</th><th>Result</th></tr>
+        <tr><td>true</td><td>true</td><td>true</td></tr>
+        <tr><td>true</td><td>false</td><td>true</td></tr>
+        <tr><td>false</td><td>true</td><td>true</td></tr>
+        <tr><td>false</td><td>false</td><td>false</td></tr>
+    </table>
+
+    <h2>3. If Statement with Logical NOT</h2>
+<pre>if (!(condition)) {
+    // Runs when the condition is reversed
+}</pre>
+    <table>
+        <tr><th>Condition</th><th>!Condition</th></tr>
+        <tr><td>true</td><td>false</td></tr>
+        <tr><td>false</td><td>true</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
