@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 - Google Chrome Console</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; }
+        #output p { margin: 5px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Google Chrome Console</h1>
+
+    <h2>How to Open the Console</h2>
+    <ol>
+        <li>Right-click on browser page</li>
+        <li>Click <strong>Inspect</strong> (or press F12)</li>
+        <li>Select the <strong>2nd tab (Console)</strong></li>
+    </ol>
+
+    <div class="note">
+        The console is used for <strong>development purposes</strong> and for <strong>showing JavaScript errors</strong>.
+        It can run <strong>all JavaScript commands</strong>.
+    </div>
+
+    <h2>Console Methods</h2>
+
+    <h3>1. console.log()</h3>
+<pre>var x = 50;
+console.log(x);</pre>
+
+    <h3>2. console.table()</h3>
+<pre>console.table([1, 2, 3]);</pre>
+
+    <h3>3. console.error()</h3>
+<pre>console.error("Something Wrong");</pre>
+
+    <h3>4. console.warn()</h3>
+<pre>console.warn("Warning");</pre>
+
+    <h3>5. console.clear()</h3>
+<pre>console.clear();</pre>
+
+    <h3>6. console.time() / console.timeEnd()</h3>
+<pre>console.time("Test");
+console.warn("Warning");
+console.warn("Warning");
+console.timeEnd("Test");</pre>
+
+    <h2>Summary Table</h2>
+    <table>
+        <tr><th>Method</th><th>Purpose</th></tr>
+        <tr><td><code>console.log()</code></td><td>Print a message</td></tr>
+        <tr><td><code>console.table()</code></td><td>Show data as a table</td></tr>
+        <tr><td><code>console.error()</code></td><td>Show an error</td></tr>
+        <tr><td><code>console.warn()</code></td><td>Show a warning</td></tr>
+        <tr><td><code>console.clear()</code></td><td>Clear the console</td></tr>
+        <tr><td><code>console.time()</code></td><td>Start a timer</td></tr>
+        <tr><td><code>console.timeEnd()</code></td><td>Stop the timer</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
