@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>67 - DOM classList Methods</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+
+        #header {
+            padding: 20px;
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            border-radius: 6px;
+            margin: 10px 0;
+            cursor: pointer;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        #header.active { background: #c8e6c9; }
+        #header.highlight { outline: 3px solid orange; }
+        #header.bold { font-weight: 900; }
+        #header.large { font-size: 24px; }
+        #header.demo { border-color: purple; }
+        #header.open { background: #ffe082; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript DOM classList Methods</h1>
+
+    <h2>JavaScript classList Methods</h2>
+    <table>
+        <tr><th>Method</th><th>Purpose</th></tr>
+        <tr><td><code>add(class1, class2, ...)</code></td><td>Adds one or more classes</td></tr>
+        <tr><td><code>remove(class1, class2, ...)</code></td><td>Removes one or more classes</td></tr>
+        <tr><td><code>toggle(class)</code></td><td>Adds if missing, removes if present</td></tr>
+        <tr><td><code>contains(class)</code></td><td>Checks if class exists (true/false)</td></tr>
+        <tr><td><code>item(index)</code></td><td>Returns class at given index</td></tr>
+        <tr><td><code>length</code></td><td>Number of classes</td></tr>
+    </table>
+
+    <h2>1. addClass — classList Method</h2>
+    <p>For <strong>adding CSS new properties by event</strong> with a class list.</p>
+<pre>document.getElementById("header").addEventListener("click", abc);
+
+function abc() {
+    document.getElementById("header").classList.add("xyz");
+}
+
+// Multiple:
+el.classList.add("red", "bold", "large");</pre>
+
+    <h2>2. removeClass — classList Method</h2>
+    <p>For <strong>removing CSS properties by event</strong> with class list.</p>
+<pre>document.getElementById("header").classList.remove("xyz");
+
+// Multiple:
+el.classList.remove("red", "bold");</pre>
+
+    <h2>3. toggleClass — classList Method</h2>
+    <p>For <strong>toggling (add / remove) classes with event listener</strong>.</p>
+<pre>document.getElementById("header").addEventListener("click", abc);
+
+function abc() {
+    document.getElementById("header").classList.toggle("xyz");
+}</pre>
+
+    <h2>4. toggleItem(index) — classList Method</h2>
+    <p>For <strong>editing class by index number</strong>.</p>
+<pre>var a = document.getElementById("header").classList.item(0);
+console.log(a);</pre>
+
+    <h2>5. contains(class) — classList Method</h2>
+    <p>For <strong>checking if a class exists or not</strong>.</p>
+<pre>var a = document.getElementById("header").classList.contains("abc");
+// Returns true or false</pre>
+
+    <h2>6. length — classList Property</h2>
+    <p>For <strong>taking the class count on target</strong>.</p>
+<pre>var a = document.getElementById("header").classList;
+console.log(a.length);</pre>
+
+    <div class="note">
+        ⭐ <code>classList</code> returns classes <strong>as an array</strong>.<br>
+        ⭐ Prefer <code>classList</code> over <code>className</code> for safe changes.
+    </div>
+
+    <h2>Live Demo</h2>
+    <div id="header" class="demo-header">Click Me — Try classList Toggles</div>
+    <p><em>Click the header to toggle the <code>open</code> class.</em></p>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
