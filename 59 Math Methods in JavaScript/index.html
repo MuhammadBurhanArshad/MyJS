@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>59 - Math Methods</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Math Methods</h1>
+
+    <h2>List of Math Methods</h2>
+    <table>
+        <tr><th>Method</th><th>Description</th></tr>
+        <tr><td><code>Math.ceil(x)</code></td><td>Rounds up</td></tr>
+        <tr><td><code>Math.floor(x)</code></td><td>Rounds down</td></tr>
+        <tr><td><code>Math.round(x)</code></td><td>Rounds to nearest</td></tr>
+        <tr><td><code>Math.trunc(x)</code></td><td>Removes decimals</td></tr>
+        <tr><td><code>Math.max(...)</code></td><td>Maximum value</td></tr>
+        <tr><td><code>Math.min(...)</code></td><td>Minimum value</td></tr>
+        <tr><td><code>Math.sqrt(x)</code></td><td>Square root</td></tr>
+        <tr><td><code>Math.cbrt(x)</code></td><td>Cube root</td></tr>
+        <tr><td><code>Math.pow(x, y)</code></td><td>x to power y</td></tr>
+        <tr><td><code>Math.random()</code></td><td>Random 0–1</td></tr>
+        <tr><td><code>Math.abs(x)</code></td><td>Absolute value</td></tr>
+        <tr><td><code>Math.PI</code></td><td>3.14159...</td></tr>
+    </table>
+
+    <h2>1. Math.ceil() — Round UP</h2>
+<pre>Math.ceil(2.25);   // 3
+// Eliminates decimal, increments
+// Works inversely with - values</pre>
+
+    <h2>2. Math.floor() — Round DOWN</h2>
+<pre>Math.floor(2.35);   // 2
+// Eliminates decimal, decrements</pre>
+
+    <h2>3. Math.round() — Nearest</h2>
+<pre>Math.round(2.4);   // 2
+Math.round(2.5);   // 3</pre>
+
+    <h2>4. Math.trunc() — Remove Decimals</h2>
+<pre>Math.trunc(2.4);   // 2</pre>
+
+    <h2>5. Math.max()</h2>
+<pre>Math.max(8, 10, 2, 50, 25);   // 50</pre>
+
+    <h2>6. Math.min()</h2>
+<pre>Math.min(20, 10, 8, 50, 25);  // 8</pre>
+
+    <h2>7. Math.sqrt()</h2>
+<pre>Math.sqrt(64);    // 8</pre>
+
+    <h2>8. Math.cbrt()</h2>
+<pre>Math.cbrt(125);   // 5</pre>
+
+    <h2>9. Math.pow()</h2>
+<pre>Math.pow(4, 3);   // 64 (4³)</pre>
+
+    <h2>10. Math.random()</h2>
+<pre>Math.random();                     // 0.19xxx
+Math.floor(Math.random() * 100);   // 0 to 99
+Math.floor(Math.random() * 6) + 1; // 1 to 6</pre>
+
+    <h2>11. Math.abs()</h2>
+<pre>Math.abs(-5.25);   // 5.25</pre>
+
+    <h2>12. Math.PI</h2>
+<pre>Math.PI;   // 3.141592653589793</pre>
+
+    <h2>Rounding Comparison</h2>
+    <table>
+        <tr><th>Input</th><th>ceil()</th><th>floor()</th><th>round()</th><th>trunc()</th></tr>
+        <tr><td>2.1</td><td>3</td><td>2</td><td>2</td><td>2</td></tr>
+        <tr><td>2.5</td><td>3</td><td>2</td><td>3</td><td>2</td></tr>
+        <tr><td>2.9</td><td>3</td><td>2</td><td>3</td><td>2</td></tr>
+        <tr><td>-2.1</td><td>-2</td><td>-3</td><td>-2</td><td>-2</td></tr>
+        <tr><td>-2.5</td><td>-2</td><td>-3</td><td>-2</td><td>-2</td></tr>
+        <tr><td>-2.9</td><td>-2</td><td>-3</td><td>-3</td><td>-2</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
