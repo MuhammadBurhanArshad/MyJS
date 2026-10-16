@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>56 - String Methods</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript String Methods</h1>
+
+    <h2>List of String Methods</h2>
+    <table>
+        <tr><th>Method</th><th>Description</th></tr>
+        <tr><td><code>length</code></td><td>Counts characters</td></tr>
+        <tr><td><code>toLowerCase()</code></td><td>Converts to lowercase</td></tr>
+        <tr><td><code>toUpperCase()</code></td><td>Converts to uppercase</td></tr>
+        <tr><td><code>includes()</code></td><td>Checks if value exists</td></tr>
+        <tr><td><code>startsWith()</code></td><td>Checks start of string</td></tr>
+        <tr><td><code>endsWith()</code></td><td>Checks end of string</td></tr>
+        <tr><td><code>search()</code></td><td>Position of match</td></tr>
+        <tr><td><code>match()</code></td><td>Matches in array (regex)</td></tr>
+        <tr><td><code>indexOf()</code></td><td>First index</td></tr>
+        <tr><td><code>lastIndexOf()</code></td><td>Last index</td></tr>
+        <tr><td><code>replace()</code></td><td>Replaces a word</td></tr>
+        <tr><td><code>trim()</code></td><td>Removes extra spaces</td></tr>
+        <tr><td><code>split()</code></td><td>Splits into array</td></tr>
+        <tr><td><code>concat()</code></td><td>Joins strings</td></tr>
+        <tr><td><code>repeat()</code></td><td>Repeats string</td></tr>
+        <tr><td><code>slice()</code></td><td>Extracts portion</td></tr>
+        <tr><td><code>substring()</code></td><td>Extracts between indexes</td></tr>
+        <tr><td><code>charAt()</code></td><td>Character at position</td></tr>
+        <tr><td><code>charCodeAt()</code></td><td>Unicode of character</td></tr>
+        <tr><td><code>toString()</code></td><td>Convert to string</td></tr>
+        <tr><td><code>valueOf()</code></td><td>Return primitive value</td></tr>
+    </table>
+
+    <h2>1. length</h2>
+<pre>var str = "JavaScript is a Great Language";
+str.length;   // 30</pre>
+
+    <h2>2. toLowerCase / toUpperCase</h2>
+<pre>"Burhan".toLowerCase();   // "burhan"
+"Burhan".toUpperCase();   // "BURHAN"</pre>
+
+    <h2>3. includes()</h2>
+<pre>"Burhan".includes("Burhan");   // true
+// Case-sensitive</pre>
+
+    <h2>4. startsWith / endsWith</h2>
+<pre>var str = "Burhan is a good boy";
+
+str.startsWith("Burhan");   // true
+str.endsWith("boy");        // true</pre>
+
+    <h2>5. search()</h2>
+<pre>var str = "Burhan Arshad";
+str.search("Arshad");   // 8
+str.search("Mango");    // -1</pre>
+
+    <h2>6. match()</h2>
+<pre>var str = "Burhan is a good boy";
+str.match(/is/g);
+// ["is"]  (uses regular expressions)</pre>
+
+    <h2>7. indexOf / lastIndexOf</h2>
+<pre>var str = "Burhan is a good boy";
+str.indexOf("is");       // 7
+str.lastIndexOf("is");   // 7</pre>
+
+    <h2>8. replace()</h2>
+<pre>var str = "JavaScript is a great language";
+str.replace("JavaScript", "PHP");
+// "PHP is a great language"</pre>
+
+    <h2>9. trim()</h2>
+<pre>var str = "   Burhan   ";
+str.trim();
+// "Burhan"  (removes leading and trailing spaces)</pre>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
