@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>70 - DOM Traversal Methods III</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        #inner { background: #e3f2fd; border: 2px solid #90caf9; border-radius: 6px; padding: 10px; margin: 10px 0; }
+        #inner p { background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; margin: 6px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript DOM Traversal Methods III</h1>
+
+    <h2>Target Methods</h2>
+    <ul>
+        <li><code>firstChild</code></li>
+        <li><code>firstElementChild</code></li>
+        <li><code>lastChild</code></li>
+        <li><code>lastElementChild</code></li>
+    </ul>
+
+    <h2>1. firstChild — DOM Traversal</h2>
+    <p>For targeting <strong>first node (text, enter, ...)</strong>.</p>
+<pre>var a = document.getElementById("inner").firstChild;
+console.log(a);</pre>
+
+    <h2>2. firstElementChild — DOM Traversal</h2>
+    <p>For targeting <strong>first element tag</strong>.</p>
+<pre>var a = document.getElementById("outer").firstElementChild;
+console.log(a);</pre>
+
+    <h2>3. lastChild — DOM Traversal</h2>
+    <p>For targeting <strong>last node (text, enter, ...)</strong>.</p>
+<pre>var a = document.getElementById("inner").lastChild;
+console.log(a);</pre>
+
+    <h2>4. lastElementChild — DOM Traversal</h2>
+    <p>For targeting <strong>last element tag</strong>.</p>
+<pre>var a = document.getElementById("inner").lastElementChild;
+console.log(a);</pre>
+
+    <h2>firstChild vs firstElementChild</h2>
+    <table>
+        <tr><th>Feature</th><th>firstChild</th><th>firstElementChild</th></tr>
+        <tr><td>Returns</td><td>First <strong>node</strong></td><td>First <strong>element</strong></td></tr>
+        <tr><td>Includes text?</td><td>✅ Yes</td><td>❌ No</td></tr>
+        <tr><td>Includes comments?</td><td>✅ Yes</td><td>❌ No</td></tr>
+        <tr><td>Common surprise</td><td>Whitespace text</td><td>None</td></tr>
+        <tr><td>Best for</td><td>Full node inspection</td><td>Element iteration</td></tr>
+    </table>
+
+    <div class="note">
+        ⭐ Prefer <code>firstElementChild</code> / <code>lastElementChild</code> to skip whitespace text nodes.
+    </div>
+
+    <h2>Full Example</h2>
+<pre>&lt;div id="inner"&gt;
+    &lt;p&gt;One&lt;/p&gt;
+    &lt;p&gt;Two&lt;/p&gt;
+    &lt;p&gt;Three&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  var inner = document.getElementById("inner");
+
+  console.log(inner.firstChild);          // #text
+  console.log(inner.firstElementChild);   // &lt;p&gt;One&lt;/p&gt;
+
+  console.log(inner.lastChild);           // #text
+  console.log(inner.lastElementChild);    // &lt;p&gt;Three&lt;/p&gt;
+&lt;/script&gt;</pre>
+
+    <h2>Demo DOM Tree</h2>
+    <div id="inner">
+        <p>One</p>
+        <p>Two</p>
+        <p>Three</p>
+    </div>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
