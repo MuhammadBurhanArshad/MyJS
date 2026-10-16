@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>46 - Array Methods find() & findIndex()</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Array Methods find() &amp; findIndex()</h1>
+
+    <h2>Target Methods</h2>
+    <ul>
+        <li><code>find()</code> — returns the first matching value</li>
+        <li><code>findIndex()</code> — returns the index of the first match</li>
+    </ul>
+
+    <h2>1. find() Function</h2>
+    <p>Returns the <strong>value of the first element</strong> in an array that passes a test.</p>
+
+<pre>var ages = [10, 23, 19, 20];
+var b = ages.find(checkAdult);
+
+document.write(b);
+
+function checkAdult(age) {
+    return age >= 18;
+}
+
+// Output: 23</pre>
+
+    <div class="note">
+        ⭐ <strong>find() only returns the FIRST element which passes the condition.</strong>
+    </div>
+
+    <h2>2. findIndex() Function</h2>
+    <p>Returns the <strong>index</strong> of the first element in an array that passes a test.</p>
+
+<pre>var ages = [10, 23, 19, 20];
+var b = ages.findIndex(checkAdult);
+
+document.write(b);
+
+function checkAdult(age) {
+    return age >= 18;
+}
+
+// Output: 1</pre>
+
+    <h2>find() vs findIndex()</h2>
+    <table>
+        <tr><th>Method</th><th>Returns</th><th>Example</th></tr>
+        <tr><td><code>find()</code></td><td>The value</td><td><code>23</code></td></tr>
+        <tr><td><code>findIndex()</code></td><td>The index</td><td><code>1</code></td></tr>
+    </table>
+
+    <h2>No Match</h2>
+    <table>
+        <tr><th>Method</th><th>No match returns</th></tr>
+        <tr><td><code>find()</code></td><td><code>undefined</code></td></tr>
+        <tr><td><code>findIndex()</code></td><td><code>-1</code></td></tr>
+    </table>
+
+    <h2>More Examples</h2>
+
+    <h3>Find a String</h3>
+<pre>var names = ["Sanjay", "Aman", "Burhan"];
+names.find(n =&gt; n === "Aman");
+// "Aman"</pre>
+
+    <h3>Find an Object</h3>
+<pre>var users = [
+    { name: "Ali", age: 22 },
+    { name: "Sara", age: 17 },
+    { name: "Burhan", age: 25 }
+];
+
+users.find(u =&gt; u.age &gt;= 18);
+// { name: "Ali", age: 22 }</pre>
+
+    <h3>Find Index of a Number</h3>
+<pre>var nums = [5, 12, 8, 130, 44];
+nums.findIndex(n =&gt; n &gt; 10);
+// 1  (12 &gt; 10)</pre>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
