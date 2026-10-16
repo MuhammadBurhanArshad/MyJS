@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>51 - Object Part II</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Object Part II</h1>
+
+    <h2>Target Method — <code>new Object()</code></h2>
+    <ul>
+        <li><code>new Object()</code> — creates an empty object</li>
+        <li>Then we add properties using dot notation</li>
+    </ul>
+
+    <h2>Creating an Object — Method II</h2>
+
+    <h3>Step 1: Create an Empty Object</h3>
+<pre>var a = new Object();</pre>
+
+    <h3>Step 2: Add Properties (Saving)</h3>
+<pre>a.firstName = "Tom";
+a.lastName = "Burhan";</pre>
+
+    <h3>Full Example</h3>
+<pre>var a = new Object();
+a.firstName = "Tom";
+a.lastName = "Burhan";
+
+document.write(a.firstName);   // Tom
+document.write(a.lastName);    // Burhan</pre>
+
+    <h2>Calling / Accessing the Object</h2>
+    <p>Three ways to access it:</p>
+
+    <h3>1. console.log(a)</h3>
+<pre>console.log(a);
+// { firstName: "Tom", lastName: "Burhan" }</pre>
+
+    <h3>2. Dot Notation</h3>
+<pre>document.write(a.firstName);
+// Tom</pre>
+
+    <h3>3. Bracket Notation</h3>
+<pre>document.write(a["firstName"]);
+// Tom</pre>
+
+    <div class="note">
+        ⭐ All three ways produce the same data — they just display it differently.
+    </div>
+
+    <h2>Two Ways to Create an Object</h2>
+    <table>
+        <tr><th>Feature</th><th>Literal <code>{ }</code></th><th><code>new Object()</code></th></tr>
+        <tr><td>Syntax</td><td>Short</td><td>Longer</td></tr>
+        <tr><td>Readability</td><td>✅ Clear</td><td>⚠️ Verbose</td></tr>
+        <tr><td>Preferred in modern JS</td><td>✅ Yes</td><td>⚠️ Rarely</td></tr>
+        <tr><td>Add properties later</td><td>Possible</td><td>Common use</td></tr>
+        <tr><td>Creates empty first</td><td>❌ No</td><td>✅ Yes</td></tr>
+    </table>
+
+    <h2>Adding Properties Dynamically</h2>
+<pre>var user = new Object();
+
+user.name = "Burhan";
+user.age = 18;
+user.email = "burhan@example.com";
+
+console.log(user);
+// { name: "Burhan", age: 18, email: "burhan@example.com" }</pre>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
