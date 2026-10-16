@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>58 - Number Methods</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Number Methods</h1>
+
+    <h2>List of Number Methods</h2>
+    <ul>
+        <li><code>Number()</code></li>
+        <li><code>parseInt()</code></li>
+        <li><code>parseFloat()</code></li>
+        <li><code>isFinite()</code></li>
+        <li><code>isInteger()</code></li>
+        <li><code>toFixed()</code></li>
+        <li><code>toPrecision()</code></li>
+    </ul>
+
+    <h2>1. Number() — Convert to Number</h2>
+    <p>Converts a value into a number. <strong>N of number should be Capital.</strong></p>
+<pre>var a = "99";
+var num = Number(a);
+
+document.write(num + 10);   // 109</pre>
+
+    <h2>2. parseInt() — Convert to Integer</h2>
+    <p>Converts a string number into an integer (removes decimals).</p>
+<pre>var a = "99.99";
+var num = parseInt(a);
+
+document.write(num);   // 99</pre>
+
+    <h2>3. parseFloat() — Extract Decimal Value</h2>
+<pre>var a = "10.3";
+var num = parseFloat(a);
+
+document.write(num);   // 10.3</pre>
+
+    <h2>4. isFinite() — Check Finite Number</h2>
+    <p>Returns <code>true</code> or <code>false</code>. Checks if a given value is finite or not.</p>
+<pre>var a = 100;
+var num = isFinite(a);
+
+document.write(num);   // true</pre>
+
+    <h2>5. isInteger() — Check Integer</h2>
+    <p>Returns <code>true</code> or <code>false</code>. Checks if a given value is an integer.</p>
+<pre>var a = 10.50;
+var num = Number.isInteger(a);
+
+document.write(num);   // false</pre>
+
+    <h2>6. toFixed() — Round to Decimal Places</h2>
+    <p>Returns rounded value to a given number of decimal places.</p>
+<pre>var a = 5.56789;
+var num = a.toFixed(3);
+
+document.write(num);   // 5.568</pre>
+
+    <h2>7. toPrecision() — Round to Significant Digits</h2>
+    <p>Returns the rounded value of a given number of digits.</p>
+<pre>var a = 5.36789;
+var num = a.toPrecision(2);
+
+document.write(num);   // 5.4</pre>
+
+    <h2>Comparison Table</h2>
+    <table>
+        <tr><th>Method</th><th>Purpose</th><th>Returns</th></tr>
+        <tr><td><code>Number()</code></td><td>Convert to number</td><td>Number</td></tr>
+        <tr><td><code>parseInt()</code></td><td>Convert to integer</td><td>Integer</td></tr>
+        <tr><td><code>parseFloat()</code></td><td>Extract decimal</td><td>Decimal</td></tr>
+        <tr><td><code>isFinite()</code></td><td>Check if finite</td><td>true / false</td></tr>
+        <tr><td><code>isInteger()</code></td><td>Check if integer</td><td>true / false</td></tr>
+        <tr><td><code>toFixed(n)</code></td><td>Round to n decimals</td><td>String</td></tr>
+        <tr><td><code>toPrecision(n)</code></td><td>Round to n significant digits</td><td>String</td></tr>
+    </table>
+
+    <div class="note">
+        ⭐ <code>toFixed()</code> counts <strong>decimal places</strong>.
+        ⭐ <code>toPrecision()</code> counts <strong>significant digits</strong>.
+        ⭐ Both return <strong>strings</strong>.
+    </div>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
