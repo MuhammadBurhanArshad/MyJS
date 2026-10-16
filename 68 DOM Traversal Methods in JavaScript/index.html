@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>68 - DOM Traversal Methods</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        .tree { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; font-family: monospace; font-size: 13px; line-height: 1.5; white-space: pre; overflow-x: auto; }
+        #parent { background: #e3f2fd; border: 2px solid #90caf9; border-radius: 6px; padding: 10px; margin: 10px 0; }
+        #parent p { background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; margin: 6px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript DOM Traversal Methods</h1>
+
+    <h2>DOM Traversal Methods</h2>
+    <table>
+        <tr><th>Parent</th><th>Children / Siblings</th></tr>
+        <tr><td><code>parentNode</code></td><td><code>firstChild</code></td></tr>
+        <tr><td><code>parentElement</code></td><td><code>firstElementChild</code></td></tr>
+        <tr><td><code>children</code></td><td><code>lastChild</code></td></tr>
+        <tr><td><code>childNodes</code></td><td><code>lastElementChild</code></td></tr>
+        <tr><td>&nbsp;</td><td><code>nextElementSibling</code></td></tr>
+        <tr><td>&nbsp;</td><td><code>nextSibling</code></td></tr>
+        <tr><td>&nbsp;</td><td><code>previousElementSibling</code></td></tr>
+        <tr><td>&nbsp;</td><td><code>previousSibling</code></td></tr>
+    </table>
+
+    <h2>DOM Traversal — Visual</h2>
+    <div class="tree">Parent Element →   [ A ]
+                  /  |  |  \  \
+                [B] [C] [D] [E] [F]
+                 ↑    ↑       ↑    ↑
+            firstChild prev  next lastChild
+                     sibling sibling</div>
+
+    <h2>1. parentNode — DOM Traversal</h2>
+    <ul>
+        <li>For targeting parent tag.</li>
+        <li>It returns something (not null).</li>
+    </ul>
+<pre>var a = document.getElementById("main").parentNode;
+console.log(a);</pre>
+
+    <h2>2. parentElement — DOM Traversal</h2>
+    <ul>
+        <li>For targeting parent tag.</li>
+        <li>It returns <strong>null</strong> if not found something.</li>
+    </ul>
+<pre>var a = document.getElementById("main").parentElement;
+console.log(a);</pre>
+
+    <h2>3. children vs childNodes</h2>
+    <table>
+        <tr><th>Property</th><th>Returns</th></tr>
+        <tr><td><code>children</code></td><td>Only <strong>element</strong> children</td></tr>
+        <tr><td><code>childNodes</code></td><td><strong>All</strong> nodes (text, comments, elements)</td></tr>
+    </table>
+
+    <h2>4. First and Last Child</h2>
+    <table>
+        <tr><th>Property</th><th>Returns</th></tr>
+        <tr><td><code>firstChild</code></td><td>First <strong>node</strong> (may be text)</td></tr>
+        <tr><td><code>firstElementChild</code></td><td>First <strong>element</strong> child</td></tr>
+        <tr><td><code>lastChild</code></td><td>Last <strong>node</strong></td></tr>
+        <tr><td><code>lastElementChild</code></td><td>Last <strong>element</strong> child</td></tr>
+    </table>
+
+    <h2>5. Siblings</h2>
+    <table>
+        <tr><th>Property</th><th>Returns</th></tr>
+        <tr><td><code>nextSibling</code></td><td>Next <strong>node</strong></td></tr>
+        <tr><td><code>nextElementSibling</code></td><td>Next <strong>element</strong> sibling</td></tr>
+        <tr><td><code>previousSibling</code></td><td>Previous <strong>node</strong></td></tr>
+        <tr><td><code>previousElementSibling</code></td><td>Previous <strong>element</strong> sibling</td></tr>
+    </table>
+
+    <div class="note">
+        ⭐ Prefer <code>*Element*</code> variants to skip whitespace text nodes.
+    </div>
+
+    <h2>Demo DOM Tree</h2>
+    <div id="parent">
+        <p id="first">First</p>
+        <p id="second">Second</p>
+        <p id="third">Third</p>
+    </div>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
