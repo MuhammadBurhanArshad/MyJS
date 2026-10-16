@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>65 - DOM CSS Styling Methods</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        #header {
+            padding: 12px;
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+        .highlight { outline: 3px solid orange; }
+        .active { background-color: #c8e6c9 !important; }
+        .primary { font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript DOM CSS Styling Methods</h1>
+
+    <h2>DOM CSS Styling Methods</h2>
+    <ul>
+        <li><code>style</code> — inline CSS properties</li>
+        <li><code>className</code> — the entire class attribute (string)</li>
+        <li><code>classList</code> — the class list as an array</li>
+    </ul>
+
+    <h2>1. style — DOM Targeting (Inline CSS)</h2>
+<pre>var a = document.querySelector("#header").style.color;
+console.log(a);
+
+// Set:
+document.querySelector("#header").style.color = "red";</pre>
+
+    <p><em>Uses camelCase: <code>backgroundColor</code>, <code>fontSize</code>.</em></p>
+
+    <h2>2. className — DOM Targeting (Full Class String)</h2>
+<pre>var a = document.querySelector("#header").className;
+console.log(a);
+
+// Set (REPLACES ALL classes):
+document.querySelector("#header").className = "new-class";</pre>
+
+    <h2>3. classList — DOM Targeting (Array of Classes)</h2>
+<pre>var a = document.querySelector("#header").classList;
+// Returns value in array</pre>
+
+    <h3>classList Methods</h3>
+    <table>
+        <tr><th>Method</th><th>Purpose</th></tr>
+        <tr><td><code>add("x")</code></td><td>Adds a class</td></tr>
+        <tr><td><code>remove("x")</code></td><td>Removes a class</td></tr>
+        <tr><td><code>toggle("x")</code></td><td>Toggles a class</td></tr>
+        <tr><td><code>contains("x")</code></td><td>Checks if present</td></tr>
+        <tr><td><code>replace("a", "b")</code></td><td>Replaces one class</td></tr>
+        <tr><td><code>length</code></td><td>Number of classes</td></tr>
+        <tr><td><code>item(i)</code></td><td>Class at index i</td></tr>
+    </table>
+
+    <h3>Examples</h3>
+<pre>var el = document.querySelector("#header");
+
+el.classList.add("active");
+el.classList.remove("active");
+el.classList.toggle("highlight");
+el.classList.contains("active");    // true / false
+el.classList.replace("old", "new");</pre>
+
+    <h2>style vs className vs classList</h2>
+    <table>
+        <tr><th>Feature</th><th>style</th><th>className</th><th>classList</th></tr>
+        <tr><td>Operates on</td><td>Inline CSS</td><td>Full class string</td><td>Individual classes</td></tr>
+        <tr><td>Type</td><td>Object</td><td>String</td><td>DOMTokenList</td></tr>
+        <tr><td>Setting</td><td>By property</td><td>Replaces all</td><td>add/remove/toggle</td></tr>
+        <tr><td>Best for</td><td>Dynamic inline</td><td>Replace everything</td><td>Safe changes</td></tr>
+    </table>
+
+    <div class="note">
+        ⚠️ <code>className</code> <strong>overwrites</strong> all existing classes.<br>
+        ⭐ <code>classList</code> is the <strong>safest</strong> way to manage classes.
+    </div>
+
+    <h2>Demo Element</h2>
+    <div id="header" class="header primary">
+        Demo Header — styles will be applied via JS
+    </div>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
