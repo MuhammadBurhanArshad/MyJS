@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>64 - DOM querySelector & querySelectorAll</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        .demo-item { padding: 8px; background: #f8f9fa; border-radius: 4px; margin: 4px 0; border: 1px solid #ddd; }
+        #header { padding: 12px; background: #e3f2fd; border-radius: 6px; border: 1px solid #90caf9; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript DOM querySelector() &amp; querySelectorAll()</h1>
+
+    <h2>Target Methods</h2>
+    <ul>
+        <li><code>querySelector()</code> — returns the <strong>first</strong> matching element</li>
+        <li><code>querySelectorAll()</code> — returns <strong>all</strong> matching elements</li>
+    </ul>
+
+    <div class="note">
+        ⭐ These are for <strong>direct selecting elements</strong>.
+    </div>
+
+    <h2>Syntax</h2>
+<pre>document.querySelector(css selector);
+document.querySelectorAll(css selector);</pre>
+
+    <h2>1. querySelector() — First Match</h2>
+<pre>var a = document.querySelector("#header");
+console.log(a);
+
+// Also:
+document.querySelector(".box");        // first element with class="box"
+document.querySelector("p");           // first &lt;p&gt;
+document.querySelector("div &gt; p");     // first &lt;p&gt; inside a &lt;div&gt;</pre>
+
+    <h2>2. querySelectorAll() — All Matches</h2>
+<pre>var a = document.querySelectorAll("#header");
+console.log(a);
+
+// Get attribute:
+var b = document.querySelector("#header").getAttribute("class");
+console.log(b);
+
+// Get innerHTML:
+var c = document.querySelectorAll("#header").innerHTML;
+console.log(c);</pre>
+
+    <h2>Comparison of Both Methods</h2>
+    <table>
+        <tr><th>Feature</th><th>querySelector()</th><th>querySelectorAll()</th></tr>
+        <tr><td>Returns</td><td>First match</td><td>All matches</td></tr>
+        <tr><td>Type</td><td>Element / null</td><td>NodeList</td></tr>
+        <tr><td>CSS selectors</td><td>✅ Yes</td><td>✅ Yes</td></tr>
+        <tr><td>Loop needed</td><td>❌ No</td><td>✅ Yes</td></tr>
+    </table>
+
+    <h2>CSS Selector Examples</h2>
+    <table>
+        <tr><th>Selector</th><th>Meaning</th></tr>
+        <tr><td><code>#header</code></td><td>id="header"</td></tr>
+        <tr><td><code>.box</code></td><td>class="box"</td></tr>
+        <tr><td><code>p</code></td><td>all &lt;p&gt; tags</td></tr>
+        <tr><td><code>div p</code></td><td>&lt;p&gt; inside &lt;div&gt;</td></tr>
+        <tr><td><code>ul &gt; li</code></td><td>direct &lt;li&gt; children of &lt;ul&gt;</td></tr>
+        <tr><td><code>[type="text"]</code></td><td>inputs with type="text"</td></tr>
+    </table>
+
+    <h2>Demo Elements</h2>
+    <div id="header" class="demo-header">This is the header</div>
+
+    <div class="demo-item">Item 1</div>
+    <div class="demo-item">Item 2</div>
+    <div class="demo-item">Item 3</div>
+
+    <p>This is a paragraph for testing querySelector.</p>
+    <a href="#top">Back to top</a>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
