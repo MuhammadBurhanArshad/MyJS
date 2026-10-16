@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>52 - Array of Objects</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Array of Objects</h1>
+
+    <h2>Target</h2>
+    <ul>
+        <li>Array having objects</li>
+        <li>Array of objects</li>
+    </ul>
+
+    <h2>Array of Objects — Syntax</h2>
+<pre>var student = [
+    { Name: "Burhan", Age: 18 },
+    { Name: "Aman",   Age: 19 },
+    { Name: "Rehman", Age: 20 }
+];</pre>
+
+    <h2>Visual Layout</h2>
+<pre>Index   Object
+──────────────────────────────
+  0     { Name: "Burhan", Age: 18 }
+  1     { Name: "Aman",   Age: 19 }
+  2     { Name: "Rehman", Age: 20 }</pre>
+
+    <h2>Accessing Values</h2>
+<pre>student[0];          // { Name: "Burhan", Age: 18 }
+student[0].Name;     // "Burhan"
+student[1].Age;      // 19</pre>
+
+    <h2>Loop with for</h2>
+<pre>for (var a = 0; a &lt; student.length; a++) {
+    document.write(student[a].Name + "&lt;br&gt;");
+}
+
+// Output:
+// Burhan
+// Aman
+// Rehman</pre>
+
+    <h2>Loop with forEach</h2>
+<pre>student.forEach(function (s) {
+    document.write(s.Name + " - " + s.Age + "&lt;br&gt;");
+});
+
+// Output:
+// Burhan - 18
+// Aman - 19
+// Rehman - 20</pre>
+
+    <h2>Loop with for...of</h2>
+<pre>for (var s of student) {
+    document.write(s.Name + "&lt;br&gt;");
+}</pre>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
