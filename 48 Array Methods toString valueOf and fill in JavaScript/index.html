@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>48 - Array Methods toString(), valueOf() & fill()</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Array Methods toString(), valueOf() &amp; fill()</h1>
+
+    <h2>Target Methods</h2>
+    <ul>
+        <li><code>toString()</code> — array to string</li>
+        <li><code>valueOf()</code> — returns the array itself</li>
+        <li><code>fill()</code> — fills with a static value</li>
+    </ul>
+
+    <h2>1. toString() Function</h2>
+    <p>Used for <strong>changing an array to a string</strong>.</p>
+
+    <div class="note">
+        ⭐ The <code>toString()</code> method <strong>converts an array into a string</strong> and returns the result.
+    </div>
+
+    <h3>Example</h3>
+<pre>var a = ["Sanjay", "Aman", "Burhan"];
+a.toString();
+document.write(a);
+
+// Output: Sanjay,Aman,Burhan</pre>
+
+    <h2>2. valueOf() Function</h2>
+    <p>Returns the <strong>array itself</strong>.</p>
+
+    <h3>Example</h3>
+<pre>var a = ["Sanjay", "Aman", "Burhan"];
+document.write(a.valueOf());
+
+// Output: Sanjay,Aman,Burhan</pre>
+
+    <h3>Difference Between toString() and valueOf()</h3>
+    <table>
+        <tr><th>Feature</th><th>toString()</th><th>valueOf()</th></tr>
+        <tr><td>Returns</td><td><strong>String</strong></td><td><strong>Array</strong></td></tr>
+        <tr><td>typeof</td><td><code>"string"</code></td><td><code>"object"</code></td></tr>
+        <tr><td>Original</td><td>Unchanged</td><td>Unchanged</td></tr>
+    </table>
+
+    <h2>3. fill() Function</h2>
+    <p>Fills all the elements in an array with a <strong>static value</strong>.</p>
+
+    <h3>Example</h3>
+<pre>var a = ["Sanjay", "Aman", "Burhan"];
+a.fill("Hello");
+document.write(a);
+
+// Output: Hello,Hello,Hello</pre>
+
+    <h3>Advanced — Fill with Start and End</h3>
+<pre>var a = [1, 2, 3, 4, 5];
+a.fill(0, 2, 4);
+// a → [1, 2, 0, 0, 5]</pre>
+
+    <h2>Comparison Table</h2>
+    <table>
+        <tr><th>Method</th><th>Purpose</th><th>Mutates?</th><th>Returns</th></tr>
+        <tr><td><code>toString()</code></td><td>Convert to string</td><td>❌ No</td><td>String</td></tr>
+        <tr><td><code>valueOf()</code></td><td>Return the array</td><td>❌ No</td><td>Array</td></tr>
+        <tr><td><code>fill()</code></td><td>Fill with a value</td><td>✅ Yes</td><td>Modified array</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
