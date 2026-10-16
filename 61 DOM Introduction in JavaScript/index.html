@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>61 - DOM Introduction</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        .tree { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; font-family: monospace; font-size: 13px; line-height: 1.5; white-space: pre; overflow-x: auto; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript DOM Introduction</h1>
+
+    <h2>What is DOM?</h2>
+    <ul>
+        <li><strong>DOM → Document Object Model</strong></li>
+        <li>Represents the HTML document as a <strong>tree structure</strong></li>
+        <li>Used by JavaScript to access and manipulate HTML elements</li>
+    </ul>
+
+    <h2>HTML DOM Tree</h2>
+    <div class="tree">Document
+   ↓
+root (html)
+   ├── element: &lt;head&gt;
+   │       └── element: &lt;title&gt;
+   │              └── text: "A New WebSide"
+   └── element: &lt;body&gt;
+           ├── element: &lt;nav&gt;
+           │       └── text: "About Us"
+           ├── element: &lt;div&gt;  (attribute: class)
+           └── element: &lt;div&gt;  (attribute: id, class)</div>
+
+    <h2>Node Types</h2>
+    <table>
+        <tr><th>Node Type</th><th>Example</th></tr>
+        <tr><td>Document</td><td><code>document</code></td></tr>
+        <tr><td>Element</td><td><code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code></td></tr>
+        <tr><td>Text</td><td>"A New WebSide"</td></tr>
+        <tr><td>Attribute</td><td><code>class</code>, <code>id</code>, <code>href</code></td></tr>
+    </table>
+
+    <div class="note">
+        ⭐ <strong>These are Nodes</strong> — every part of the DOM is a node.
+    </div>
+
+    <h2>What Can We Do With the DOM?</h2>
+
+    <p>We can do two types of work with the DOM tree in JavaScript:</p>
+    <ul>
+        <li><strong>Get</strong> — read values from the page</li>
+        <li><strong>Set</strong> — modify values on the page</li>
+    </ul>
+
+    <h2>How to Access DOM Elements</h2>
+<pre>document.getElementById("demo");
+document.getElementsByClassName("box");
+document.getElementsByTagName("p");
+document.querySelector("#demo");</pre>
+
+    <h2>Common DOM Objects</h2>
+    <table>
+        <tr><th>Object</th><th>Description</th></tr>
+        <tr><td><code>document</code></td><td>The whole HTML document</td></tr>
+        <tr><td><code>window</code></td><td>The browser window</td></tr>
+        <tr><td><code>document.body</code></td><td>The <code>&lt;body&gt;</code> element</td></tr>
+        <tr><td><code>document.head</code></td><td>The <code>&lt;head&gt;</code> element</td></tr>
+        <tr><td><code>document.documentElement</code></td><td>The <code>&lt;html&gt;</code> element</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
