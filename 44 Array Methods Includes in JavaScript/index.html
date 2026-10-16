@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>44 - Array Method includes()</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        .warn { background: #f8d7da; border-left: 4px solid #dc3545; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Array Method includes()</h1>
+
+    <h2>Target Method</h2>
+    <ul>
+        <li><code>includes()</code> — check if a value is in the array</li>
+    </ul>
+
+    <h2>Array-<code>includes()</code> Function</h2>
+    <p>Used for <strong>testing a condition</strong> to check if a value is in the array or not.</p>
+
+    <h3>Syntax</h3>
+<pre>arrayName.includes("search item");</pre>
+
+    <h3>Return Value</h3>
+    <ul>
+        <li><strong>true</strong> — value exists in the array</li>
+        <li><strong>false</strong> — value does NOT exist</li>
+    </ul>
+
+    <div class="note">
+        ⭐ It returns <strong>true or false</strong>.
+    </div>
+
+    <h2>Example</h2>
+<pre>var a = ["Sanjay", "Aman", "Burhan"];
+var b = a.includes("Burhan");
+
+document.write(b);
+
+// Output: true</pre>
+
+    <h2>Another Example — Not Found</h2>
+<pre>var a = ["Sanjay", "Aman", "Burhan"];
+
+a.includes("Rehman");
+// false</pre>
+
+    <div class="warn">
+        ⚠️ <strong>includes() is case-sensitive.</strong>
+    </div>
+
+<pre>a.includes("burhan");   // false  (lowercase b)
+a.includes("Burhan");   // true   (correct case)</pre>
+
+    <h2>Optional Start Index</h2>
+<pre>var a = [10, 20, 30, 20];
+
+a.includes(20);       // true
+a.includes(20, 2);    // true  (start at index 2)
+a.includes(10, 1);    // false (start after 10)</pre>
+
+    <h2>Comparison with indexOf()</h2>
+    <table>
+        <tr><th>Feature</th><th>includes()</th><th>indexOf()</th></tr>
+        <tr><td>Returns</td><td><strong>true / false</strong></td><td>index / -1</td></tr>
+        <tr><td>Readability</td><td>✅ High</td><td>⚠️ Lower</td></tr>
+        <tr><td>Best for</td><td>Checking existence</td><td>Finding position</td></tr>
+    </table>
+
+    <h3>Same Check — Two Ways</h3>
+<pre>a.indexOf("Burhan") !== -1    // older style
+a.includes("Burhan")          // modern, cleaner</pre>
+
+    <h2>Special Note — NaN</h2>
+<pre>[NaN].includes(NaN);    // true
+[NaN].indexOf(NaN);     // -1  (indexOf fails on NaN)</pre>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
