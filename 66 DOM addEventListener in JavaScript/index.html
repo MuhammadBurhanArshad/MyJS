@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>66 - DOM addEventListener</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        #header {
+            padding: 20px;
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            border-radius: 6px;
+            margin: 10px 0;
+            cursor: pointer;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        #header:hover { background: #bbdefb; }
+        button {
+            background: #3498db; color: white; border: none;
+            padding: 10px 16px; border-radius: 6px;
+            cursor: pointer; font-size: 14px; margin: 4px;
+        }
+        button:hover { background: #2980b9; }
+        .btn-red { background: #e74c3c; }
+        .btn-red:hover { background: #c0392b; }
+        .btn-green { background: #27ae60; }
+        .btn-green:hover { background: #1e8449; }
+        .btn-orange { background: #e67e22; }
+        .btn-orange:hover { background: #d35400; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript DOM addEventListener()</h1>
+
+    <h2>HTML Event Attributes (Old Way)</h2>
+<pre>&lt;button onclick="abc()"&gt;Click me&lt;/button&gt;
+&lt;img src="..." onmouseover="xyz()"&gt;</pre>
+
+    <div class="note">
+        ⚠️ But we want to add JavaScript <strong>in the JavaScript file</strong>.
+    </div>
+
+    <h2>Two Ways to Attach Events from JS</h2>
+    <ol>
+        <li>Assign Events using the HTML DOM</li>
+        <li>DOM <code>addEventListener</code></li>
+    </ol>
+
+    <h2>1. Assign Events Using the HTML DOM</h2>
+<pre>document.getElementById("header").onclick = abc;
+
+function abc() {
+    document.getElementById("header").style.background = "green";
+}</pre>
+
+    <h2>2. DOM addEventListener()</h2>
+<pre>document.getElementById("header").addEventListener("click", abc);
+
+function abc() {
+    document.getElementById("header").style.background = "green";
+}</pre>
+
+    <h2>3 Parameters of addEventListener()</h2>
+<pre>addEventListener(event, function, useCapture);</pre>
+
+    <table>
+        <tr><th>Parameter</th><th>Purpose</th></tr>
+        <tr><td><strong>event</strong></td><td>Event name, e.g., <code>"click"</code></td></tr>
+        <tr><td><strong>function</strong></td><td>Function to run when event fires</td></tr>
+        <tr><td><strong>useCapture</strong></td><td><code>true</code> (capture) / <code>false</code> (bubble, default)</td></tr>
+    </table>
+
+    <div class="note">
+        ⭐ <strong>Use Capture:</strong> <code>true</code> → capture phase; <code>false</code> → bubble phase.
+    </div>
+
+    <h2>Removing an Event Listener</h2>
+<pre>element.removeEventListener("click", functionName);</pre>
+
+    <h2>Multiple Listeners on Same Event</h2>
+<pre>var el = document.getElementById("header");
+
+el.addEventListener("click", function () {
+    console.log("First handler");
+});
+
+el.addEventListener("click", function () {
+    console.log("Second handler");
+});</pre>
+
+    <h2>HTML Attribute vs addEventListener</h2>
+    <table>
+        <tr><th>Feature</th><th>HTML Attribute</th><th>addEventListener</th></tr>
+        <tr><td>Location</td><td>In HTML</td><td>In JavaScript</td></tr>
+        <tr><td>Multiple handlers</td><td>❌ No</td><td>✅ Yes</td></tr>
+        <tr><td>Prefix</td><td><code>on</code> needed</td><td>No <code>on</code></td></tr>
+        <tr><td>Removal</td><td>Hard</td><td><code>removeEventListener()</code></td></tr>
+        <tr><td>Best practice</td><td>❌ Old</td><td>✅ Modern</td></tr>
+    </table>
+
+    <h2>Live Demo</h2>
+
+    <div id="header">Click Me (Header)</div>
+
+    <button id="btnAdd">➕ Add Listener</button>
+    <button id="btnRemove" class="btn-red">➖ Remove Listener</button>
+    <button id="btnOnce" class="btn-green">🔂 Once-only Listener</button>
+    <button id="btnMulti" class="btn-orange">👥 Multi Handler</button>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
