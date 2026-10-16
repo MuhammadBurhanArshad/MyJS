@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>54 - For In Loop</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript For/In Loop</h1>
+
+    <h2>Target</h2>
+    <ul>
+        <li><code>for/in</code> loop — iterate over object properties</li>
+    </ul>
+
+    <h2>How to Print Objects</h2>
+<pre>var a = {
+    fname: "Burhan",
+    lname: "Arshad",
+    age: 18
+};
+
+console.log(a.fname);
+console.log(a.lname);
+console.log(a.age);</pre>
+
+    <h2>How to Print Objects with a Loop</h2>
+
+    <h3>Syntax</h3>
+<pre>for (var key in obj) {
+    statement
+}</pre>
+
+    <h3>Example</h3>
+<pre>var obj = {
+    fname: "Burhan",
+    lname: "Arshad",
+    age: 18
+};
+
+for (var key in obj) {
+    document.write(obj[key]);
+}
+
+// Output: BurhanArshad18</pre>
+
+    <div class="note">
+        ⭐ <strong>For loop is for printing object.</strong><br>
+        ⭐ For printing the <strong>key</strong> of an object, we use <strong><code>key +</code></strong> before the object variable.
+    </div>
+
+    <h3>Print Key + Value</h3>
+<pre>for (var key in obj) {
+    document.write(key + " = " + obj[key] + "&lt;br&gt;");
+}
+
+// Output:
+// fname = Burhan
+// lname = Arshad
+// age = 18</pre>
+
+    <h2>for...in on an Array</h2>
+<pre>var arr = ["Sanjay", "Aman", "Burhan"];
+
+for (var i in arr) {
+    document.write(i + ": " + arr[i] + "&lt;br&gt;");
+}
+
+// Output:
+// 0: Sanjay
+// 1: Aman
+// 2: Burhan</pre>
+
+    <h2>for...in vs for...of</h2>
+    <table>
+        <tr><th>Feature</th><th>for...in</th><th>for...of</th></tr>
+        <tr><td>Iterates over</td><td>Keys / indexes</td><td>Values</td></tr>
+        <tr><td>Best for</td><td>Objects</td><td>Arrays, strings</td></tr>
+        <tr><td>Order</td><td>Not guaranteed</td><td>Guaranteed</td></tr>
+        <tr><td>Example</td><td><code>for (k in obj)</code></td><td><code>for (v of arr)</code></td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
