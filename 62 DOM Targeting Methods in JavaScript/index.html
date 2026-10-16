@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>62 - DOM Targeting Methods</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript DOM Targeting Methods</h1>
+
+    <p>DOM targeting = <strong>selecting HTML elements</strong> so you can work with them.</p>
+
+    <h2>Additional Operations</h2>
+    <ul>
+        <li>Add HTML Element</li>
+        <li>Delete HTML Element</li>
+    </ul>
+
+    <h2>How to Target a DOM Object</h2>
+
+    <div class="note">
+        ⭐ <strong>These three are the basic and most important methods of DOM targeting.</strong>
+    </div>
+
+    <h3>1. getElementById</h3>
+<pre>var element;
+element = document.getElementById("Burhan");
+console.log(element);</pre>
+
+    <h3>2. getElementsByClassName</h3>
+<pre>var element;
+element = document.getElementsByClassName("Burhan");
+console.log(element);</pre>
+
+    <h3>3. getElementsByTagName</h3>
+<pre>var element;
+element = document.getElementsByTagName("Burhan");
+console.log(element);</pre>
+
+    <h2>Other DOM Targeting Methods</h2>
+
+    <table>
+        <tr><th>Property</th><th>Description</th></tr>
+        <tr><td><code>document</code></td><td>The whole document</td></tr>
+        <tr><td><code>document.all</code></td><td>All elements as an array</td></tr>
+        <tr><td><code>document.documentElement</code></td><td>The <code>&lt;html&gt;</code> element</td></tr>
+        <tr><td><code>document.head</code></td><td>The <code>&lt;head&gt;</code> element</td></tr>
+        <tr><td><code>document.title</code></td><td>The <code>&lt;title&gt;</code> text</td></tr>
+        <tr><td><code>document.body</code></td><td>The <code>&lt;body&gt;</code> element</td></tr>
+        <tr><td><code>document.images</code></td><td>All <code>&lt;img&gt;</code> elements</td></tr>
+        <tr><td><code>document.anchors</code></td><td>All <code>&lt;a&gt;</code> with name</td></tr>
+        <tr><td><code>document.links</code></td><td>All <code>&lt;a&gt;</code> links</td></tr>
+        <tr><td><code>document.forms</code></td><td>All <code>&lt;form&gt;</code> elements</td></tr>
+        <tr><td><code>document.doctype</code></td><td>The DOCTYPE node</td></tr>
+        <tr><td><code>document.URL</code></td><td>Full URL</td></tr>
+        <tr><td><code>document.baseURI</code></td><td>Base URL</td></tr>
+        <tr><td><code>document.domain</code></td><td>Domain name</td></tr>
+    </table>
+
+    <h2>Example — Printing DOM Tree</h2>
+<pre>var element;
+element = document;
+console.log(element);</pre>
+
+    <h2>Example — DOM as an Array</h2>
+<pre>var element;
+element = document.all;
+console.log(element);</pre>
+
+    <h2>Example — document.head</h2>
+<pre>var element;
+element = document.head;
+console.log(element);</pre>
+
+    <h2>Example — document.title</h2>
+<pre>var element;
+element = document.title;
+console.log(element);</pre>
+
+    <h2>Example — document.body</h2>
+<pre>var element;
+element = document.body;
+console.log(element);</pre>
+
+    <h2>Example — document.links</h2>
+<pre>var element;
+element = document.links;
+console.log(element);</pre>
+
+    <h2>Example — document.images</h2>
+<pre>var element;
+element = document.images;
+console.log(element);</pre>
+
+    <h2>Example — document.forms</h2>
+<pre>var element;
+element = document.forms;
+console.log(element);</pre>
+
+    <h2>Example — document.doctype</h2>
+<pre>var element;
+element = document.doctype;
+console.log(element);</pre>
+
+    <h2>Example — document.URL</h2>
+<pre>var element;
+element = document.URL;
+console.log(element);</pre>
+
+    <h2>Example — document.domain</h2>
+<pre>var element;
+element = document.domain;
+console.log(element);</pre>
+
+    <h2>Example — document.baseURI</h2>
+<pre>var element;
+element = document.baseURI;
+console.log(element);</pre>
+
+    <h2>Demo Elements for Targeting</h2>
+    <p class="demo-item">Demo 1</p>
+    <p class="demo-item">Demo 2</p>
+    <p class="demo-item">Demo 3</p>
+    <a href="#top">Back to top</a>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
