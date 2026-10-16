@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>71 - DOM Traversal Methods IV</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        #parent { background: #e3f2fd; border: 2px solid #90caf9; border-radius: 6px; padding: 10px; margin: 10px 0; }
+        #parent p { background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; margin: 6px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript DOM Traversal Methods IV</h1>
+
+    <h2>Target Methods</h2>
+    <ul>
+        <li><code>nextElementSibling</code></li>
+        <li><code>nextSibling</code></li>
+        <li><code>previousSibling</code></li>
+        <li><code>previousElementSibling</code></li>
+    </ul>
+
+    <h2>1. nextElementSibling — DOM Traversal</h2>
+    <p>For targeting <strong>next tag</strong>.</p>
+<pre>var a = document.getElementById("child-c").nextElementSibling;
+console.log(a);</pre>
+
+    <h2>2. previousElementSibling — DOM Traversal</h2>
+    <p>For targeting <strong>previous tag</strong>.</p>
+<pre>var a = document.getElementById("child-c").previousElementSibling;
+console.log(a);</pre>
+
+    <h2>3. nextSibling — DOM Traversal</h2>
+    <p>For targeting <strong>next node (text, enter, ...)</strong>.</p>
+<pre>var a = document.getElementById("child-c").nextSibling;
+console.log(a);</pre>
+
+    <h2>4. previousSibling — DOM Traversal</h2>
+    <p>For targeting <strong>previous node (text, enter, ...)</strong>.</p>
+<pre>var a = document.getElementById("child-c").previousSibling;
+console.log(a);</pre>
+
+    <h2>Comparison: Element vs Node Siblings</h2>
+    <table>
+        <tr><th>Feature</th><th>next/prev ElementSibling</th><th>next/prev Sibling</th></tr>
+        <tr><td>Returns</td><td><strong>Element</strong> sibling</td><td>Any <strong>node</strong></td></tr>
+        <tr><td>Includes text?</td><td>❌ No</td><td>✅ Yes</td></tr>
+        <tr><td>Includes comments?</td><td>❌ No</td><td>✅ Yes</td></tr>
+        <tr><td>Common surprise</td><td>None</td><td>Whitespace</td></tr>
+        <tr><td>Best for</td><td>Element navigation</td><td>Full inspection</td></tr>
+    </table>
+
+    <h2>Visual Example</h2>
+<pre>&lt;div id="parent"&gt;
+    &lt;p id="child-a"&gt;A&lt;/p&gt;
+    &lt;p id="child-b"&gt;B&lt;/p&gt;
+    &lt;p id="child-c"&gt;C&lt;/p&gt;
+    &lt;p id="child-d"&gt;D&lt;/p&gt;
+&lt;/div&gt;</pre>
+
+    <h3>For #child-c:</h3>
+    <table>
+        <tr><th>Property</th><th>Returns</th></tr>
+        <tr><td><code>nextElementSibling</code></td><td><code>&lt;p id="child-d"&gt;D&lt;/p&gt;</code></td></tr>
+        <tr><td><code>previousElementSibling</code></td><td><code>&lt;p id="child-b"&gt;B&lt;/p&gt;</code></td></tr>
+        <tr><td><code>nextSibling</code></td><td><code>#text</code> (whitespace)</td></tr>
+        <tr><td><code>previousSibling</code></td><td><code>#text</code> (whitespace)</td></tr>
+    </table>
+
+    <div class="note">
+        ⭐ Prefer <code>*Element*</code> variants to skip whitespace text nodes.
+    </div>
+
+    <h2>Demo DOM Tree</h2>
+    <div id="parent">
+        <p id="child-a">A</p>
+        <p id="child-b">B</p>
+        <p id="child-c">C</p>
+        <p id="child-d">D</p>
+    </div>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
