@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>63 - DOM Get & Set Methods</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        #header { padding: 12px; background: #f8f9fa; border-radius: 6px; border: 1px solid #ccc; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript DOM Get &amp; Set Methods</h1>
+
+    <h2>What We Can Get with DOM?</h2>
+    <ul>
+        <li><strong>HTML</strong></li>
+        <li><strong>Text</strong></li>
+        <li><strong>Attribute</strong></li>
+    </ul>
+
+    <h2>DOM Get vs Set Methods</h2>
+    <table>
+        <tr><th>DOM Get Methods</th><th>DOM Set Methods</th></tr>
+        <tr><td><code>innerHTML</code></td><td><code>innerHTML</code></td></tr>
+        <tr><td><code>innerText</code></td><td><code>innerText</code></td></tr>
+        <tr><td><code>getAttribute()</code></td><td><code>setAttribute()</code></td></tr>
+        <tr><td><code>getAttributeNode()</code></td><td><code>attributes</code></td></tr>
+        <tr><td><code>attributes</code></td><td><code>removeAttribute()</code></td></tr>
+    </table>
+
+    <h2>1. innerText — Get/Set Method</h2>
+    <p>For getting &amp; setting <strong>inner text</strong> of target.</p>
+
+    <h3>Get — Read the Text</h3>
+<pre>var a = document.getElementById("header").innerText;
+console.log(a);</pre>
+
+    <h3>Set — Write the Text</h3>
+<pre>document.getElementById("header").innerText = "Burhan";</pre>
+
+    <h2>2. innerHTML — Get/Set Method</h2>
+    <p>For getting &amp; setting <strong>inner HTML</strong> of target.</p>
+
+    <h3>Get</h3>
+<pre>var a = document.getElementById("header").innerHTML;
+console.log(a);</pre>
+
+    <h3>Set</h3>
+<pre>document.getElementById("header").innerHTML = "&lt;h1&gt;Burhan&lt;/h1&gt;";</pre>
+
+    <h2>innerText vs innerHTML</h2>
+    <table>
+        <tr><th>Feature</th><th>innerText</th><th>innerHTML</th></tr>
+        <tr><td>Returns</td><td>Only text</td><td>Text + HTML tags</td></tr>
+        <tr><td>Can set HTML?</td><td>❌ No</td><td>✅ Yes</td></tr>
+        <tr><td>Use case</td><td>Reading content</td><td>Building HTML</td></tr>
+    </table>
+
+    <h2>3. getAttribute() — Get Method</h2>
+    <p>For getting <strong>attribute value</strong>.</p>
+<pre>var a = document.getElementById("header").getAttribute("id");
+console.log(a);</pre>
+
+    <h2>4. getAttributeNode() — Get Method</h2>
+    <p>For getting attribute value <strong>with node name</strong>.</p>
+<pre>var a = document.getElementById("header").getAttributeNode("id");
+console.log(a);</pre>
+
+    <h2>5. attributes — Get Method</h2>
+    <p>For getting <strong>all attributes in array form</strong>.</p>
+<pre>var a = document.getElementById("header").attributes;
+console.log(a);</pre>
+
+    <h2>6. setAttribute() — Set Method</h2>
+    <p>For <strong>setting attribute value</strong>.</p>
+<pre>document.getElementById("header").setAttribute("class", "xyz");</pre>
+
+    <h2>7. attributes[i].value — Set Method</h2>
+    <p>For <strong>setting attribute value by index</strong>.</p>
+<pre>document.getElementById("header").attributes[1].value = "xyz";</pre>
+
+    <h2>8. removeAttribute() — Set Method</h2>
+    <p>For <strong>removing attribute</strong>.</p>
+<pre>document.getElementById("header").removeAttribute("style");</pre>
+
+    <h2>Demo Element</h2>
+    <div id="header" class="demo-header" style="color: #2c3e50;">
+        Original Header Text
+    </div>
+
+    <p id="para1">Original Paragraph HTML</p>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
