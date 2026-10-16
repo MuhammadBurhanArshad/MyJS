@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>53 - Const Variable with Array & Objects</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Const Variable with Array &amp; Objects</h1>
+
+    <h2>Target</h2>
+    <ul>
+        <li>Understand <code>const</code> with Array</li>
+        <li>Understand <code>const</code> with Object</li>
+    </ul>
+
+    <div class="note">
+        ⭐ <strong>We can't assign <code>const</code> variable multiple times.</strong>
+    </div>
+
+    <h2>1. Const Variable with Array</h2>
+
+    <h3>Changing Array Value — ✅ Allowed</h3>
+<pre>const a = [10, 20, 30];
+a[1] = 25;
+
+console.log(a);   // [10, 25, 30]</pre>
+
+    <h3>Reassigning the Whole Array — ❌ Not Allowed</h3>
+<pre>const a = [10, 20, 30];
+a = [1, 2, 3];   // ❌ TypeError</pre>
+
+    <p><em>We cannot assign value as a whole variable.</em></p>
+
+    <h2>2. Const Variable with Object</h2>
+
+    <h3>Changing Properties — ✅ Allowed</h3>
+<pre>const a = {
+    name: "Burhan",
+    age: 18
+};
+
+a.name = "Burhan Arshad";
+console.log(a);</pre>
+
+    <h3>Reassigning the Whole Object — ❌ Not Allowed</h3>
+<pre>const a = { name: "Burhan" };
+a = { name: "Aman" };   // ❌ TypeError</pre>
+
+    <p><em>We can't assign value as normal to a <code>const</code> variable.</em></p>
+
+    <h2>Summary Table</h2>
+    <table>
+        <tr><th>Action</th><th>Array (const)</th><th>Object (const)</th></tr>
+        <tr><td>Modify elements / properties</td><td>✅ Allowed</td><td>✅ Allowed</td></tr>
+        <tr><td>Add elements / properties</td><td>✅ Allowed</td><td>✅ Allowed</td></tr>
+        <tr><td>Delete elements / properties</td><td>✅ Allowed</td><td>✅ Allowed</td></tr>
+        <tr><td>Reassign the whole variable</td><td>❌ Not allowed</td><td>❌ Not allowed</td></tr>
+    </table>
+
+    <h2>Why Does This Work?</h2>
+    <p><code>const</code> locks the <strong>binding</strong>, not the <strong>value</strong>.</p>
+    <ul>
+        <li><strong>Binding</strong> — the variable name pointing to a value.</li>
+        <li><strong>Value</strong> — the actual array or object in memory.</li>
+    </ul>
+    <p>The name must always point to the <strong>same value</strong>, but that value can still be modified.</p>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
