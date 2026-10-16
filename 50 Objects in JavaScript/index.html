@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50 - Objects in JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Objects</h1>
+
+    <h2>What is an Object?</h2>
+    <ul>
+        <li>Object is like an array</li>
+        <li>It's the <strong>advance version of an array</strong></li>
+        <li>We use <code>{ }</code> instead of <code>[ ]</code></li>
+        <li>We use <strong>name for value</strong> instead of index</li>
+    </ul>
+
+    <h2>Array vs Object</h2>
+
+    <h3>Array (index-based)</h3>
+<pre>var a = ["Sanjay", "Aman", "Burhan"];
+//          0         1        2</pre>
+
+    <h3>Object (property-based)</h3>
+<pre>var a = {
+    firstName: "Sanjay",
+    lastName: "Aman",
+    age: 18,
+    country: "Pakistan"
+};</pre>
+
+    <div class="note">
+        ⭐ Array uses <strong>indexes</strong>. Object uses <strong>properties</strong>.
+    </div>
+
+    <h2>Example</h2>
+<pre>var a = {
+    fname: "Muhammad Burhan",
+    lname: "Arshad",
+    age: 18,
+    email: "burhantheschoolboy@gmail.com"
+};
+
+document.write(a.fname);   // Muhammad Burhan
+document.write(a.lname);   // Arshad
+document.write(a.age);     // 18
+document.write(a.email);   // burhantheschoolboy@gmail.com</pre>
+
+    <h2>What Can We Store?</h2>
+    <p>We can store <strong>array, string, number, and function</strong> in it — also <strong>object in object</strong>.</p>
+
+<pre>var person = {
+    name: "Burhan",
+    age: 18,
+    hobbies: ["Coding", "Reading"],
+    greet: function () {
+        return "Hello!";
+    },
+    address: {
+        city: "Lahore",
+        country: "Pakistan"
+    }
+};
+
+person.hobbies[0];     // "Coding"
+person.greet();        // "Hello!"
+person.address.city;   // "Lahore"</pre>
+
+    <h2>Two Ways to Access</h2>
+<pre>// Dot notation
+a.fname
+
+// Bracket notation
+a["fname"]</pre>
+
+    <h2>Objects vs Arrays</h2>
+    <table>
+        <tr><th>Feature</th><th>Array</th><th>Object</th></tr>
+        <tr><td>Syntax</td><td><code>[ ]</code></td><td><code>{ }</code></td></tr>
+        <tr><td>Key type</td><td>Numeric index</td><td>Named property</td></tr>
+        <tr><td>Order</td><td>Ordered</td><td>Unordered</td></tr>
+        <tr><td>Access</td><td><code>a[0]</code></td><td><code>a.name</code></td></tr>
+        <tr><td>Best for</td><td>Lists</td><td>Records / entities</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
