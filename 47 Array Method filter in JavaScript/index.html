@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>47 - Array Method filter()</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Array Method filter()</h1>
+
+    <h2>Target Method</h2>
+    <ul>
+        <li><code>filter()</code> — creates a new array with elements that pass a test</li>
+    </ul>
+
+    <h2>Array-<code>filter()</code> Function</h2>
+    <p>Checks an array by a given condition and makes a <strong>new array</strong>.</p>
+
+    <div class="note">
+        ⭐ <strong>filter() creates an array filled with all array elements that pass a test.</strong>
+    </div>
+
+    <h3>Syntax</h3>
+<pre>arrayName.filter(functionName);</pre>
+
+    <h3>Example</h3>
+<pre>var ages = [80, 12, 19, 20];
+var b = ages.filter(checkAdult);
+
+document.write(b);
+
+function checkAdult(age) {
+    return age >= 18;
+}
+
+// Output: 80,19,20</pre>
+
+    <h2>How It Works</h2>
+<pre>ages = [80, 12, 19, 20]
+         ↓   ↓   ↓   ↓
+>= 18?   ✅  ❌  ✅  ✅
+         ↓       ↓   ↓
+Result = [80, 19, 20]   ← new array</pre>
+
+    <h2>Even Numbers Example</h2>
+<pre>var nums = [1, 2, 3, 4, 5, 6];
+
+var evens = nums.filter(function (n) {
+    return n % 2 === 0;
+});
+
+// evens → [2, 4, 6]</pre>
+
+    <h2>Arrow Function Version</h2>
+<pre>var ages = [80, 12, 19, 20];
+
+var adults = ages.filter(age =&gt; age &gt;= 18);
+
+// adults → [80, 19, 20]</pre>
+
+    <h2>filter() vs find()</h2>
+    <table>
+        <tr><th>Method</th><th>Returns</th><th>Matching</th></tr>
+        <tr><td><code>filter()</code></td><td>New array</td><td><strong>All</strong> matches</td></tr>
+        <tr><td><code>find()</code></td><td>Single element</td><td><strong>First</strong> match only</td></tr>
+    </table>
+
+    <h2>What If Nothing Matches?</h2>
+<pre>[10, 12, 15].filter(n =&gt; n &gt;= 18);
+// []  (empty array)</pre>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
