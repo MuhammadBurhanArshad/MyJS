@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>49 - Array Method forEach()</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Array Method forEach()</h1>
+
+    <h2>Targeted Method</h2>
+    <ul>
+        <li><code>forEach()</code> — loops through an array with a function</li>
+    </ul>
+
+    <h2>Array-<code>forEach()</code> Function</h2>
+
+    <div class="note">
+        ⭐ Use for <strong>printing an array with sequence</strong>.<br>
+        ⭐ It's a <strong>shorter way to print an array</strong>.
+    </div>
+
+    <h3>Syntax</h3>
+<pre>arrayName.forEach(function (value) {
+    statement
+});</pre>
+
+    <h3>Example</h3>
+<pre>var a = ["Sanjay", "Aman", "Burhan"];
+
+a.forEach(function (value) {
+    document.write(value + "&lt;br&gt;");
+});
+
+// Output:
+// Sanjay
+// Aman
+// Burhan</pre>
+
+    <h2>Function — Inline or Outer</h2>
+    <p>We can <strong>make function in forEach</strong>, or <strong>make outer function in it</strong>.</p>
+
+    <h3>Inline</h3>
+<pre>a.forEach(function (value) {
+    document.write(value + "&lt;br&gt;");
+});</pre>
+
+    <h3>Outer Function</h3>
+<pre>function show(value) {
+    document.write(value + "&lt;br&gt;");
+}
+
+a.forEach(show);</pre>
+
+    <h3>Arrow Function</h3>
+<pre>a.forEach(value =&gt; document.write(value + "&lt;br&gt;"));</pre>
+
+    <h2>Using Index</h2>
+<pre>a.forEach(function (value, index) {
+    document.write(index + ": " + value + "&lt;br&gt;");
+});
+
+// Output:
+// 0: Sanjay
+// 1: Aman
+// 2: Burhan</pre>
+
+    <h2>forEach() vs for loop</h2>
+    <table>
+        <tr><th>Feature</th><th>forEach()</th><th>for loop</th></tr>
+        <tr><td>Syntax</td><td>Shorter, cleaner</td><td>Longer, more control</td></tr>
+        <tr><td>break/continue</td><td>❌ Not supported</td><td>✅ Supported</td></tr>
+        <tr><td>Return value</td><td><code>undefined</code></td><td>N/A</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
