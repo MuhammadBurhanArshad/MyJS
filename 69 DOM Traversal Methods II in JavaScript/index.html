@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>69 - DOM Traversal Methods II</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        #inner { background: #e3f2fd; border: 2px solid #90caf9; border-radius: 6px; padding: 10px; margin: 10px 0; }
+        #inner p { background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; margin: 6px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript DOM Traversal Methods II</h1>
+
+    <h2>1. children — DOM Traversal</h2>
+    <ul>
+        <li>For <strong>targeting children elements</strong>.</li>
+        <li>For <strong>specific children we can use indexing</strong>.</li>
+    </ul>
+<pre>var a = document.getElementById("inner").children;
+console.log(a);
+
+// Access specific child:
+inner.children[0];
+inner.children[1];</pre>
+
+    <h2>2. childNodes — DOM Traversal</h2>
+    <ul>
+        <li>For <strong>returning every node like text</strong>.</li>
+        <li>It returns <strong>every node</strong> — element, text, comment.</li>
+        <li>We can also use <strong>indexing</strong>.</li>
+    </ul>
+<pre>var a = document.getElementById("inner").childNodes;
+console.log(a);
+
+// Access specific node:
+inner.childNodes[0];
+inner.childNodes[1];</pre>
+
+    <h2>children vs childNodes</h2>
+    <table>
+        <tr><th>Feature</th><th>children</th><th>childNodes</th></tr>
+        <tr><td>Returns</td><td>HTMLCollection</td><td>NodeList</td></tr>
+        <tr><td>Includes</td><td><strong>Only elements</strong></td><td><strong>All nodes</strong></td></tr>
+        <tr><td>Includes whitespace?</td><td>❌ No</td><td>✅ Yes</td></tr>
+        <tr><td>Includes comments?</td><td>❌ No</td><td>✅ Yes</td></tr>
+        <tr><td>Best for</td><td>Element iteration</td><td>Full node inspection</td></tr>
+    </table>
+
+    <h2>Visual Comparison</h2>
+
+    <h3>Given HTML:</h3>
+<pre>&lt;div id="inner"&gt;
+    &lt;p&gt;One&lt;/p&gt;
+    &lt;p&gt;Two&lt;/p&gt;
+    &lt;p&gt;Three&lt;/p&gt;
+&lt;/div&gt;</pre>
+
+    <h3>children sees:</h3>
+<pre>[&lt;p&gt;One&lt;/p&gt;, &lt;p&gt;Two&lt;/p&gt;, &lt;p&gt;Three&lt;/p&gt;]
+length = 3</pre>
+
+    <h3>childNodes sees:</h3>
+<pre>[#text, &lt;p&gt;One&lt;/p&gt;, #text, &lt;p&gt;Two&lt;/p&gt;, #text, &lt;p&gt;Three&lt;/p&gt;, #text]
+length = 7</pre>
+
+    <div class="note">
+        ⭐ <code>#text</code> entries are whitespace — newlines and indentation between tags.
+    </div>
+
+    <h2>Node Types</h2>
+    <table>
+        <tr><th>Value</th><th>Type</th></tr>
+        <tr><td>1</td><td>Element</td></tr>
+        <tr><td>2</td><td>Attribute</td></tr>
+        <tr><td>3</td><td>Text</td></tr>
+        <tr><td>8</td><td>Comment</td></tr>
+        <tr><td>9</td><td>Document</td></tr>
+    </table>
+
+    <h2>Demo DOM Tree</h2>
+    <div id="inner">
+        <p>One</p>
+        <p>Two</p>
+        <p>Three</p>
+    </div>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
