@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>60 - Date Methods</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Date Methods</h1>
+
+    <h2>JavaScript Date Object</h2>
+<pre>var now = new Date();</pre>
+
+    <h2>How to Take Current Date</h2>
+<pre>var now = new Date();
+document.write(now);
+// It takes the current date</pre>
+
+    <h2>Getter Methods</h2>
+    <table>
+        <tr><th>Method</th><th>Description</th></tr>
+        <tr><td><code>toDateString()</code></td><td>Readable date string</td></tr>
+        <tr><td><code>getDate()</code></td><td>Day of month (1–31)</td></tr>
+        <tr><td><code>getFullYear()</code></td><td>Year (e.g., 2022)</td></tr>
+        <tr><td><code>getMonth()</code></td><td>Month (0–11)</td></tr>
+        <tr><td><code>getDay()</code></td><td>Day of week (0–6)</td></tr>
+        <tr><td><code>getHours()</code></td><td>Hours (0–23)</td></tr>
+        <tr><td><code>getMinutes()</code></td><td>Minutes (0–59)</td></tr>
+        <tr><td><code>getSeconds()</code></td><td>Seconds (0–59)</td></tr>
+        <tr><td><code>getMilliseconds()</code></td><td>Milliseconds (0–999)</td></tr>
+    </table>
+
+    <h2>Setter Methods</h2>
+    <table>
+        <tr><th>Method</th><th>Description</th></tr>
+        <tr><td><code>setDate()</code></td><td>Sets the day of month</td></tr>
+        <tr><td><code>setFullYear()</code></td><td>Sets the year</td></tr>
+        <tr><td><code>setMonth()</code></td><td>Sets the month (0–11)</td></tr>
+        <tr><td><code>setHours()</code></td><td>Sets hours</td></tr>
+        <tr><td><code>setMinutes()</code></td><td>Sets minutes</td></tr>
+        <tr><td><code>setSeconds()</code></td><td>Sets seconds</td></tr>
+        <tr><td><code>setMilliseconds()</code></td><td>Sets milliseconds</td></tr>
+    </table>
+
+    <h2>1. toDateString() — Current Date</h2>
+<pre>var now = new Date();
+now.toDateString();
+// "Tue Dec 28 2022"</pre>
+
+    <h2>2. getDate()</h2>
+<pre>now.getDate();   // 28</pre>
+
+    <h2>3. getFullYear()</h2>
+<pre>now.getFullYear();   // 2022</pre>
+
+    <h2>4. getMonth()</h2>
+<pre>now.getMonth();   // 11  (December)
+// Months count from 0</pre>
+
+    <h2>5. getDay()</h2>
+<pre>now.getDay();   // 2  (Tuesday)
+// Starts from Sunday = 0</pre>
+
+    <table>
+        <tr><th>Day</th><th>Number</th></tr>
+        <tr><td>Sunday</td><td>0</td></tr>
+        <tr><td>Monday</td><td>1</td></tr>
+        <tr><td>Tuesday</td><td>2</td></tr>
+        <tr><td>Wednesday</td><td>3</td></tr>
+        <tr><td>Thursday</td><td>4</td></tr>
+        <tr><td>Friday</td><td>5</td></tr>
+        <tr><td>Saturday</td><td>6</td></tr>
+    </table>
+
+    <h2>6. getHours / getMinutes / getSeconds / getMilliseconds</h2>
+<pre>now.getHours();        // 18
+now.getMinutes();      // 27
+now.getSeconds();      // 41
+now.getMilliseconds(); // 938</pre>
+
+    <h2>Setter Examples</h2>
+<pre>var now = new Date();
+
+now.setDate(20);        // → Dec 20 2022
+now.setFullYear(2023);  // → Dec 20 2023
+now.setMonth(4);        // → May 20 2023
+now.setHours(14);       // → 14:58:49
+now.setMinutes(30);
+now.setSeconds(15);
+now.setMilliseconds(500);</pre>
+
+    <div class="note">
+        ⚠️ <strong>Months are 0-indexed</strong> (Jan=0, Dec=11).<br>
+        ⚠️ <strong>Days are 0-indexed</strong> (Sun=0, Sat=6).<br>
+        ⭐ <code>getDate()</code> → day of month (1–31).<br>
+        ⭐ <code>getDay()</code> → day of week (0–6).
+    </div>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
