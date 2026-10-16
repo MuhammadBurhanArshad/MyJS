@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>57 - String Methods II</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript String Methods II</h1>
+
+    <h2>Methods Covered</h2>
+    <ul>
+        <li><code>charAt()</code>, <code>charCodeAt()</code>, <code>fromCharCode()</code></li>
+        <li><code>concat()</code>, <code>split()</code>, <code>repeat()</code></li>
+        <li><code>slice()</code>, <code>substr()</code>, <code>substring()</code></li>
+        <li><code>toString()</code>, <code>valueOf()</code></li>
+    </ul>
+
+    <h2>1. charAt() — Value at Given Index</h2>
+<pre>var str = "Burhan is a good boy";
+str.charAt(3);
+// "h"</pre>
+
+    <h2>2. charCodeAt() — Unicode at Index</h2>
+<pre>var str = "Burhan is a good boy";
+str.charCodeAt(4);
+// 97  (Unicode of 'a')</pre>
+
+    <h2>3. fromCharCode() — Code to Character</h2>
+<pre>String.fromCharCode(65);
+// "A"</pre>
+
+    <h2>4. concat() — Join Strings</h2>
+<pre>var str = "Burhan ";
+var str2 = "Arshad";
+
+str.concat(str2);
+// "Burhan Arshad"</pre>
+
+    <h2>5. split() — String to Array</h2>
+<pre>"Burhan Arshad".split(" ");
+// ["Burhan", "Arshad"]
+
+"a,b,c".split(",");
+// ["a", "b", "c"]
+
+"hello".split("");
+// ["h","e","l","l","o"]</pre>
+
+    <h2>6. repeat() — Repeat String</h2>
+<pre>"Burhan ".repeat(2);
+// "Burhan Burhan "</pre>
+
+    <h2>7. slice() — Start & End</h2>
+<pre>var str = "Burhan Arshad";
+str.slice(1, 10);
+// "urhan Arsh"</pre>
+
+    <h2>8. substr() — Start & Length</h2>
+<pre>var str = "Burhan Arshad";
+str.substr(3, 5);
+// "han A"</pre>
+
+    <div class="note">
+        ⚠️ <code>substr()</code> is <strong>deprecated</strong> — prefer <code>slice()</code> or <code>substring()</code>.
+    </div>
+
+    <h2>9. substring() — Start & End (exclusive)</h2>
+<pre>var str = "Burhan Arshad";
+str.substring(1, 5);
+// "urha"</pre>
+
+    <h2>10. toString() — Convert to String</h2>
+<pre>var str = 50;
+str.toString() + 20;
+// "5020"</pre>
+
+    <h2>11. valueOf() — Print Value</h2>
+<pre>var str = "Burhan Arshad";
+str.valueOf();
+// "Burhan Arshad"</pre>
+
+    <h2>slice() vs substr() vs substring()</h2>
+    <table>
+        <tr><th>Method</th><th>Parameters</th><th>Result</th></tr>
+        <tr><td><code>slice(1, 10)</code></td><td>start, end (exclusive)</td><td>"urhan Arsh"</td></tr>
+        <tr><td><code>substr(3, 5)</code></td><td>start, length</td><td>"han A"</td></tr>
+        <tr><td><code>substring(1, 5)</code></td><td>start, end (exclusive)</td><td>"urha"</td></tr>
+    </table>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
