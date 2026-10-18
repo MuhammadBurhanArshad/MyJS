@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>73 - DOM Append Methods</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; max-height: 300px; overflow-y: auto; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        .tree { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; font-family: monospace; font-size: 13px; line-height: 1.5; white-space: pre; overflow-x: auto; }
+        #container { background: #e3f2fd; border: 2px dashed #90caf9; border-radius: 8px; padding: 15px; margin: 15px 0; }
+        #container p, #container h2, #container li { background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; margin: 6px 0; }
+        #container ul { padding-left: 0; list-style: none; }
+        button {
+            background: #3498db; color: white; border: none;
+            padding: 8px 14px; border-radius: 6px;
+            cursor: pointer; font-size: 13px; margin: 4px;
+        }
+        button:hover { background: #2980b9; }
+        .btn-green { background: #27ae60; } .btn-green:hover { background: #1e8449; }
+        .btn-orange { background: #e67e22; } .btn-orange:hover { background: #d35400; }
+        .btn-red { background: #e74c3c; } .btn-red:hover { background: #c0392b; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript DOM Append Methods</h1>
+
+    <h2>DOM Append Methods</h2>
+    <ul>
+        <li><code>appendChild()</code> — add as last child</li>
+        <li><code>insertBefore()</code> — add before an existing child</li>
+    </ul>
+
+    <h2>DOM appendChild — Meaning / Working</h2>
+    <div class="tree">[ Tag ]         &lt;Text&gt;
+   ↓              ↓
+&lt;p&gt;&lt;/p&gt;      This is just Text
+   ↘            ↙
+    appendChild merges both elements</div>
+
+    <h2>1. appendChild — DOM Append Method</h2>
+    <p>Appends a node as the <strong>last child</strong> of a parent.</p>
+
+    <h3>Syntax</h3>
+<pre>parentElement.appendChild(newNode);</pre>
+
+    <h3>Example</h3>
+<pre>var newElement = document.createElement("h2");
+var newText = document.createTextNode("Burhan");
+
+newElement.appendChild(newText);
+
+document.getElementById("test").appendChild(newElement);
+
+console.log(newElement);</pre>
+
+    <h2>2. insertBefore — DOM Append Method</h2>
+    <p>For appending an element, text, or comment <strong>before a target</strong>.</p>
+
+    <h3>Syntax</h3>
+<pre>parentElement.insertBefore(newNode, referenceNode);</pre>
+
+    <h3>Example</h3>
+<pre>var newElement = document.createElement("h2");
+var newText = document.createTextNode("This is just Text");
+
+newElement.appendChild(newText);
+
+var target = document.getElementById("test");
+
+target.insertBefore(newElement, target.childNodes[0]);</pre>
+
+    <h2>appendChild vs insertBefore</h2>
+    <table>
+        <tr><th>Feature</th><th>appendChild()</th><th>insertBefore()</th></tr>
+        <tr><td>Position</td><td>End of parent</td><td>Before a specific child</td></tr>
+        <tr><td>Arguments</td><td><code>newNode</code></td><td><code>newNode, referenceNode</code></td></tr>
+        <tr><td>Use case</td><td>Add at end</td><td>Add at specific position</td></tr>
+    </table>
+
+    <h2>Visual</h2>
+    <div class="tree">Parent
+  │
+  ├── [child 1]
+  ├── [child 2]           ← existing children
+  └── [child 3]
+
+After appendChild(newNode):
+  ├── [child 1]
+  ├── [child 2]
+  ├── [child 3]
+  └── [newNode]           ← added at end
+
+After insertBefore(newNode, child 2):
+  ├── [child 1]
+  ├── [newNode]           ← inserted before child 2
+  ├── [child 2]
+  └── [child 3]</div>
+
+    <h2>Interactive Demo</h2>
+    <button id="btnAppend" class="btn-green">➕ Append to End</button>
+    <button id="btnInsert" class="btn-orange">⬆️ Insert at Start</button>
+    <button id="btnReset" class="btn-red">🔄 Reset</button>
+
+    <div id="container">
+        <p id="first">First Item</p>
+        <p id="last">Last Item</p>
+    </div>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
