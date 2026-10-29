@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>74 - DOM insertAdjacent Methods</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; max-height: 300px; overflow-y: auto; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        .tree { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; font-family: monospace; font-size: 13px; line-height: 1.5; white-space: pre; overflow-x: auto; }
+        #test {
+            background: #e3f2fd;
+            border: 2px dashed #90caf9;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            min-height: 40px;
+            font-size: 16px;
+        }
+        button {
+            background: #3498db; color: white; border: none;
+            padding: 8px 14px; border-radius: 6px;
+            cursor: pointer; font-size: 13px; margin: 4px;
+        }
+        button:hover { background: #2980b9; }
+        .btn-green { background: #27ae60; } .btn-green:hover { background: #1e8449; }
+        .btn-orange { background: #e67e22; } .btn-orange:hover { background: #d35400; }
+        .btn-purple { background: #8e44ad; } .btn-purple:hover { background: #71368a; }
+        .btn-red { background: #e74c3c; } .btn-red:hover { background: #c0392b; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript DOM insertAdjacent Methods</h1>
+
+    <h2>DOM Append and Create Methods</h2>
+    <ul>
+        <li><code>insertAdjacentElement()</code></li>
+        <li><code>insertAdjacentHTML()</code></li>
+        <li><code>insertAdjacentText()</code></li>
+    </ul>
+
+    <h2>Uses</h2>
+
+    <h3>Tag — insertAdjacentElement()</h3>
+    <div class="tree">[ Tag ]
+   ↓
+&lt;p&gt;&lt;/p&gt;
+   ↓
+insertAdjacentElement()</div>
+
+    <h3>Tag with Text — insertAdjacentHTML()</h3>
+    <div class="tree">[ Tag with Text ]
+   ↓
+&lt;p&gt;This is just text&lt;/p&gt;
+   ↓
+insertAdjacentHTML()</div>
+
+    <h3>Text — insertAdjacentText()</h3>
+    <div class="tree">[ Text ]
+   ↓
+This is just text
+   ↓
+insertAdjacentText()</div>
+
+    <h2>DOM insertAdjacent Positions</h2>
+    <table>
+        <tr><th>Position</th><th>Where</th></tr>
+        <tr><td><code>"beforebegin"</code></td><td>Before the element</td></tr>
+        <tr><td><code>"afterbegin"</code></td><td>Inside, at start</td></tr>
+        <tr><td><code>"beforeend"</code></td><td>Inside, at end</td></tr>
+        <tr><td><code>"afterend"</code></td><td>After the element</td></tr>
+    </table>
+
+    <h2>Visual Positions</h2>
+    <div class="tree">&lt;!-- beforebegin --&gt;
+&lt;p id="target"&gt;
+    &lt;!-- afterbegin --&gt;
+    ...existing content...
+    &lt;!-- beforeend --&gt;
+&lt;/p&gt;
+&lt;!-- afterend --&gt;</div>
+
+    <h2>1. insertAdjacentElement()</h2>
+    <p>Insert a DOM element.</p>
+<pre>var newElement = document.createElement("h2");
+var newText = document.createTextNode("This is just text");
+
+newElement.appendChild(newText);
+
+var target = document.getElementById("test");
+
+target.insertAdjacentElement("beforebegin", newElement);</pre>
+
+    <h2>2. insertAdjacentHTML()</h2>
+    <p>Insert HTML string.</p>
+<pre>target.insertAdjacentHTML("beforeend", "&lt;p&gt;Appended via HTML&lt;/p&gt;");</pre>
+
+    <div class="note">
+        ⚠️ Only use with trusted HTML — XSS risk otherwise.
+    </div>
+
+    <h2>3. insertAdjacentText()</h2>
+    <p>Insert plain text.</p>
+<pre>target.insertAdjacentText("afterbegin", "Hello, world! ");</pre>
+
+    <h2>Comparison</h2>
+    <table>
+        <tr><th>Method</th><th>Inserts</th><th>Parses HTML?</th></tr>
+        <tr><td><code>insertAdjacentElement()</code></td><td>DOM element</td><td>❌</td></tr>
+        <tr><td><code>insertAdjacentHTML()</code></td><td>HTML string</td><td>✅</td></tr>
+        <tr><td><code>insertAdjacentText()</code></td><td>Text string</td><td>❌</td></tr>
+    </table>
+
+    <h2>Interactive Demo</h2>
+    <button id="btnElement" class="btn-green">➕ insertAdjacentElement</button>
+    <button id="btnHTML" class="btn-orange">➕ insertAdjacentHTML</button>
+    <button id="btnText" class="btn-purple">➕ insertAdjacentText</button>
+    <button id="btnReset" class="btn-red">🔄 Reset</button>
+
+    <div id="test">Original Content</div>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
