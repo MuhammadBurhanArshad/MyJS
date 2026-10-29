@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>76 - DOM cloneNode()</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; max-height: 300px; overflow-y: auto; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        .lists-container { display: flex; gap: 20px; flex-wrap: wrap; }
+        .list-box { flex: 1; min-width: 200px; background: #e3f2fd; border: 2px dashed #90caf9; border-radius: 8px; padding: 12px; margin: 15px 0; }
+        .list-box h3 { margin: 0 0 10px 0; font-size: 15px; color: #2c3e50; }
+        .list-box ul { list-style: none; padding: 0; margin: 0; }
+        .list-box li { background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; margin: 6px 0; }
+        button {
+            background: #3498db; color: white; border: none;
+            padding: 8px 14px; border-radius: 6px;
+            cursor: pointer; font-size: 13px; margin: 4px;
+        }
+        button:hover { background: #2980b9; }
+        .btn-green { background: #27ae60; } .btn-green:hover { background: #1e8449; }
+        .btn-orange { background: #e67e22; } .btn-orange:hover { background: #d35400; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript DOM cloneNode()</h1>
+
+    <h2>What is cloneNode?</h2>
+    <p><strong>Clone node is used for copy node.</strong></p>
+
+    <h2>Syntax</h2>
+<pre>var copyElement = target.cloneNode(true);</pre>
+
+    <h2>Deep vs Shallow Clone</h2>
+    <table>
+        <tr><th>Parameter</th><th>Result</th></tr>
+        <tr><td><code>cloneNode(true)</code></td><td>Deep copy — node + all children</td></tr>
+        <tr><td><code>cloneNode(false)</code></td><td>Shallow copy — node only</td></tr>
+    </table>
+
+    <h2>Example from Notes</h2>
+<pre>var target = document.getElementById("list").children[0];
+var copyElement = target.cloneNode(true);
+
+console.log(copyElement);
+document.getElementById("list2").appendChild(copyElement);</pre>
+
+    <h2>What Gets Copied?</h2>
+    <table>
+        <tr><th>Feature</th><th>Copied?</th></tr>
+        <tr><td>Element tag</td><td>✅ Yes</td></tr>
+        <tr><td>Attributes (class, id)</td><td>✅ Yes</td></tr>
+        <tr><td>Children (text, elements)</td><td>✅ Yes</td></tr>
+        <tr><td>JS event listeners</td><td>❌ No</td></tr>
+        <tr><td>Inline HTML handlers</td><td>✅ Yes</td></tr>
+    </table>
+
+    <div class="note">
+        ⚠️ Duplicate IDs may appear on clones — remove or modify them.
+    </div>
+
+    <h2>Interactive Demo</h2>
+
+    <button id="btnClone" class="btn-green">🧬 Clone Random Item</button>
+    <button id="btnReset" class="btn-orange">↺ Clear #list2</button>
+
+    <div class="lists-container">
+        <div class="list-box">
+            <h3>#list (Source)</h3>
+            <ul id="list">
+                <li class="item">Apple</li>
+                <li class="item">Banana</li>
+                <li class="item">Cherry</li>
+            </ul>
+        </div>
+
+        <div class="list-box">
+            <h3>#list2 (Clones)</h3>
+            <ul id="list2"></ul>
+        </div>
+    </div>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
