@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>75 - DOM Replace and Remove Methods</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; color: #222; margin: 0; padding: 20px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; font-size: 13px; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 10px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+        #output { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 14px; font-family: monospace; max-height: 300px; overflow-y: auto; }
+        #output p { margin: 3px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 13px; }
+        th { background: #eee; }
+        .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        #list { background: #e3f2fd; border: 2px dashed #90caf9; border-radius: 8px; padding: 15px; margin: 20px 0; }
+        #list p, #list h1 { background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 8px 12px; margin: 6px 0; }
+        button {
+            background: #3498db; color: white; border: none;
+            padding: 8px 14px; border-radius: 6px;
+            cursor: pointer; font-size: 13px; margin: 4px;
+        }
+        button:hover { background: #2980b9; }
+        .btn-green { background: #27ae60; } .btn-green:hover { background: #1e8449; }
+        .btn-red { background: #e74c3c; } .btn-red:hover { background: #c0392b; }
+        .btn-orange { background: #e67e22; } .btn-orange:hover { background: #d35400; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript DOM Replace and Remove Methods</h1>
+
+    <h2>DOM Replace and Remove Methods</h2>
+    <ul>
+        <li><code>replaceChild()</code> — replaces a child node</li>
+        <li><code>removeChild()</code> — removes a child node</li>
+    </ul>
+
+    <h2>1. replaceChild() — DOM Replace Method</h2>
+<pre>var newElement = document.createElement("h1");
+newElement.textContent = "Burhan";
+
+var target = document.getElementById("list");
+target.replaceChild(newElement, target.firstElementChild);</pre>
+
+    <h2>2. removeChild() — DOM Remove Method</h2>
+<pre>var target = document.getElementById("list");
+target.removeChild(target.firstElementChild);</pre>
+
+    <h2>Modern Alternatives</h2>
+
+    <h3>element.remove()</h3>
+<pre>document.getElementById("item2").remove();</pre>
+
+    <h3>element.replaceWith()</h3>
+<pre>var oldElement = document.getElementById("item1");
+var newElement = document.createElement("h1");
+newElement.textContent = "Replaced!";
+
+oldElement.replaceWith(newElement);</pre>
+
+    <h2>Comparison of Methods</h2>
+    <table>
+        <tr><th>Feature</th><th>replaceChild()</th><th>removeChild()</th><th>replaceWith()</th><th>remove()</th></tr>
+        <tr><td>Called on</td><td>Parent</td><td>Parent</td><td>Child</td><td>Child</td></tr>
+        <tr><td>Parameters</td><td>newNode, oldNode</td><td>childNode</td><td>newNode</td><td>None</td></tr>
+        <tr><td>Browser support</td><td>✅ Old</td><td>✅ Old</td><td>✅ Modern</td><td>✅ Modern</td></tr>
+    </table>
+
+    <div class="note">
+        ⭐ Prefer <code>replaceWith()</code> / <code>remove()</code> in modern code — simpler and cleaner.
+    </div>
+
+    <h2>Interactive Demo</h2>
+    <button id="btnReplace" class="btn-green">🔄 Replace First</button>
+    <button id="btnRemove" class="btn-red">❌ Remove Last</button>
+    <button id="btnReset" class="btn-orange">↺ Reset List</button>
+
+    <div id="list">
+        <p>Item 1</p>
+        <p>Item 2</p>
+        <p>Item 3</p>
+    </div>
+
+    <h2>Live Output</h2>
+    <div id="output"></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
